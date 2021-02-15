@@ -30,7 +30,7 @@ class App extends React.Component {
       <div className="App">
         <Header/>
         <header className="App-header">
-          {username ? `Hello ${username}`: ''}
+          {username ? `Body`: ''}
         </header>
         <Footer/>
       </div>

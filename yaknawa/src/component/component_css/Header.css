@@ -1,0 +1,44 @@
+.header{
+    border-bottom: solid 1px #e6e6e6;
+}
+.written{
+    margin-top:3%;
+}
+.user-tab{
+    margin-top:2%!important;
+    padding:0 4% 0 4%;
+}
+.user-tab-ul{
+    list-style:none;
+    font-size: 12px;
+    margin:0;
+    padding:0;
+}
+
+.user-tab-li{
+    margin:0;
+    padding:0 1% 0 1%;
+    float:left;
+}
+
+.user-tab-li-last{
+    margin:0;
+    padding:0 1% 0 0;    
+    float:left;
+}
+
+.main-tab-ul{
+    list-style:none;
+    font-size: 25px;
+    margin:0;
+    padding:0;
+}
+.main-tab-li{
+    margin:0;
+    padding:0 1% 0 1%;
+    float:left; 
+}
+
+.main-tab{
+    margin-top:3%;
+}

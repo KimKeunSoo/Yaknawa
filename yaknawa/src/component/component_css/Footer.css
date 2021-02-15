@@ -1,8 +1,7 @@
 .footer{
     background-color:#f3f3f3;
     border-top: #e6e6e6 solid 1px;
-    height: 120px;
-    padding-top:20px;
+    height: 25%;
 }
 
 .footer-ul{
@@ -36,14 +35,15 @@
 }
 
 .logo{   
-    padding-top:2%;
-    width:80%;
-  
+    width:80%;  
+    height:80%;
 }
 
 .logo-container{
-    margin-left:4%;
-    padding-left:3%!important;
-    padding-right:0!important;
-    border-right:#959595 solid 1px;
+    border-right: #e6e6e6 solid 1px;
 }
+.footer-container{
+    padding-top:0.7%!important;
+    padding-bottom:0.7%!important;
+}
+
