@@ -8,7 +8,7 @@
 .footer-ul{
     list-style:none;
     font-size: 13px;
-    margin:0 0 0 1%;
+    margin:1% 0 2% 1%;
     padding:0;
 }
 
@@ -36,12 +36,14 @@
 }
 
 .logo{   
+    padding-top:2%;
     width:80%;
-    height:70%;
+  
 }
 
 .logo-container{
-    padding-left:5%!important;
+    margin-left:4%;
+    padding-left:3%!important;
     padding-right:0!important;
     border-right:#959595 solid 1px;
 }

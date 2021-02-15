@@ -15,7 +15,7 @@ const Footer = () => (
                         </img>
                     </a>
                 </Col>
-                <Col lg={10}>
+                <Col lg={8}>
                     <ul className="footer-ul">
                         <li className="footer-li">
                             <a>커뮤니티 이용안내</a>
