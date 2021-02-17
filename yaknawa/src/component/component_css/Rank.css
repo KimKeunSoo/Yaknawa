@@ -1,0 +1,25 @@
+a{ 
+    color: black!important; 
+    text-decoration: none!important;
+    cursor: pointer;
+}
+
+.Rank{
+    margin-top:1%;
+    border:solid 3px #e6e6e6;
+    margin-bottom:1%;
+}
+
+.Rank-title{
+    text-align: center;
+    font-size: 25px;
+}
+.Rank-body{
+    margin-top:2%;
+}
+.Rank-item{
+    margin: 1% 1% 0 1%;
+}
+.item-choice{
+    float:right;
+}

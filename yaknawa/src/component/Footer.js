@@ -1,12 +1,18 @@
-import React from 'react';
+import React,{PureComponent} from 'react';
 import './component_css/Footer.css';
 import logo from './component_img/yaknawa-logo2.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Footer = () => (
-    <div className="footer">
+class Footer extends PureComponent{
+    constructor(props) {
+        super(props);
+        //this.click_alert = this.click_alert.bind(this);
+      }
+    render(){
+        return(
+            <div className="footer">
         <Container fluid className="footer-container">
             <Row className="footer-row">
                 <Col lg={1}>
@@ -40,7 +46,10 @@ const Footer = () => (
         </Container>
 
     </div>
-)
+        );
+    }
+    
+}
 
 export default Footer;
 

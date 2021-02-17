@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{PureComponent} from 'react';
 import './component_css/Header.css';
 import logo from './component_img/yaknawa-logo2.png';
 import Container from 'react-bootstrap/Container';
@@ -6,8 +6,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-const Header = () => (
-    <div className="header">
+class Header extends PureComponent{
+
+    constructor(props) {
+        super(props);
+        this.click_alert = this.click_alert.bind(this);
+      }
+
+    click_alert(){
+        alert("click");
+    }
+
+    render(){
+       return(
+        <div className="header">
         <Container fluid className="user-tab">
             <Row>
                 <Col lg={9}>
@@ -15,7 +27,7 @@ const Header = () => (
                 <Col lg={2}>
                     <ul className="user-tab-ul">
                         <li className="user-tab-li">
-                            <a>로그인</a>
+                            <a herf="http://localhost:8080/loogin">로그인</a>
                         </li>
                         <li className="user-tab-li">
                             <a>회원가입</a>
@@ -58,7 +70,7 @@ const Header = () => (
                     </ul>
                 </Col>
                 <Col lg={1} className="main-tab">
-                    <Button variant="success">
+                    <Button variant="success" onClick={this.click_alert}>
                         글쓰기
                     </Button>
                 </Col>
@@ -67,7 +79,10 @@ const Header = () => (
             </Row>
         </Container>
     </div>
-)
+       );
+    }
+}
+    
 
 export default Header;
 

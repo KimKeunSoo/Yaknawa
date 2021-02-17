@@ -1,0 +1,26 @@
+.search-form{
+    width: 100%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border:solid 3px green!important;
+  }
+  .search-box{
+    margin-left:1%;
+    padding:1% 0 1% 1%;
+    border: none; 
+    background: transparent;
+    width:89%;
+    
+  }
+  .search-box:focus{
+    outline:none;
+  }
+  .search-btn{
+    border: none; 
+    background: transparent;
+    width:10%;
+    
+    
+  }
