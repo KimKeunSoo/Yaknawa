@@ -1,0 +1,50 @@
+.price-body{
+    margin:3% 0 3% 0 ;
+}
+
+.guide{
+    text-align: center;
+}
+
+.body-main{
+    text-align: center;
+}
+
+.search-body{
+    margin-top:5%;
+    text-align: center;
+    width: 100%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border:solid 3px green!important;
+}
+
+.img-box{
+    margin-top:5%;
+    height:200px;
+    background-color: gray;
+}
+
+.realtime-box{
+    margin-top:5%;
+}
+
+.realtime-title{
+    margin-left:2%;
+}
+
+.realtime-item{
+    border:solid 1px #e6e6e6;
+    margin-top:3%;
+}
+
+.item-name{
+    font-size:25px;
+    margin:1% 1% 1% 1%;
+}
+
+.item-price{
+    margin:1% 1% 1% 1%;
+}

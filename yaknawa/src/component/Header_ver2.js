@@ -1,5 +1,6 @@
 import React,{PureComponent} from 'react';
 import './component_css/Header.css';
+import Search from './Search';
 import logo from './component_img/yaknawa-logo2.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-class Header extends PureComponent{
+class Header_ver2 extends PureComponent{
 
     constructor(props) {
         super(props);
@@ -70,8 +71,8 @@ class Header extends PureComponent{
                        
                     </ul>
                 </Col>
-                <Col lg={4}>
-
+                <Col lg={4} className="sub-search">
+                    <Search />
                 </Col>
                 <Col lg={1} className="main-tab">
                     <Button variant="success" onClick={this.click_alert}>
@@ -88,7 +89,7 @@ class Header extends PureComponent{
 }
     
 
-export default Header;
+export default Header_ver2;
 
 
 

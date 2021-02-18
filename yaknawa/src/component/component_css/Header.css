@@ -35,10 +35,16 @@
 }
 .main-tab-li{
     margin:0;
-    padding:0 1% 0 1%;
+    margin:0 3% 0 3%;
     float:left; 
 }
 
 .main-tab{
     margin-top:3%;
+}
+
+.sub-search{
+    padding-top:2.7%!important;
+    padding-left:0!important;
+    float:left;
 }

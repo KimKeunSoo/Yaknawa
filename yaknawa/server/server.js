@@ -10,7 +10,10 @@ app.use(bodyparser.json());
 //처음 실행화면 랜딩
 app.use('/',(req,res)=>res.json({username:'mindol8'}));
 
-app.get('/login',(req,res)=>{
+app.get('/login',(req,res)=>res.json({username:'mindol8'}));
+
+app.get('/priceform',(req,res)=>{
+    
 });
 
 app.listen(port,()=>console.log(`Listening on port ${port}`));

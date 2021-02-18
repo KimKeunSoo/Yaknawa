@@ -1,0 +1,50 @@
+import React, { PureComponent } from 'react';
+import './component_css/Login.css';
+import Header from "./Header_ver2";
+import Footer from './Footer';
+import logo from './component_img/yaknawa-logo2.png';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
+class Login extends React.Component {
+    //component 초기설정
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: null
+        };
+        this.url = 'http://localhost:8080';
+    }
+
+    //component 만들고 첫 렌더링 마치고 실행 다른 자바스크립트 라이브러리나 프레임워크의 함수 호출, 이벤트 등록, setTimeout, setInterval, 네트워크 요청 등 비동기 작업 처리
+    componentDidMount() {
+        //백엔드 서버와 비동기 요청
+        fetch(`${this.url}/login`)
+            .then(res => res.json())
+            .then(data => this.setState({ username: data.username }));
+    }
+
+    //component 모양 정의
+    render() {
+        const { username } = this.state;
+        return (
+            <div className="Login">
+                <Header />
+                <body className="login-body">
+                   
+                </body>
+                <Footer />
+            </div>
+
+        );
+    }
+
+}
+
+export default Login;
+
+
+
+
