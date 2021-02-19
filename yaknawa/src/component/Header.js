@@ -31,7 +31,7 @@ class Header extends PureComponent{
                             <Link to="/login">로그인</Link>
                         </li>
                         <li className="user-tab-li">
-                            <a>회원가입</a>
+                            <Link to="/joinus">회원가입</Link>
                         </li>
                         <li className="user-tab-li">
                             <a>공지사항</a>
@@ -74,9 +74,11 @@ class Header extends PureComponent{
 
                 </Col>
                 <Col lg={1} className="main-tab">
-                    <Button variant="success" onClick={this.click_alert}>
-                        글쓰기
-                    </Button>
+                    <Link to="/share">
+                        <Button variant="success">
+                            글쓰기
+                        </Button>
+                    </Link>
                 </Col>
                 < Col lg={1}>
                 </Col>

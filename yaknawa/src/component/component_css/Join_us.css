@@ -1,0 +1,72 @@
+.join_us-body{
+    margin:5% 0 3% 0;
+}
+
+.body-title{
+    text-align:center;
+    font-size:35px;
+}
+
+.body-info{
+    margin-top:2%;
+    float:right;
+    font-size:12px;
+}
+
+sup{
+    color:red;
+}
+
+.body-item{
+    margin-top:5%;
+    padding-top:5%;
+    border-top:solid 3px #e6e6e6;
+}
+
+.item-lable{
+    margin-bottom:5%;
+    margin-top:5%;
+}
+
+.item-input{  
+    margin-top:1%; 
+    width:100%;
+}
+.id-check{
+    margin-top:0!important;
+}
+.checkbox-form{
+    text-align: center;
+}
+
+.checkbox-item{
+    margin:0 7% 0 7%!important;
+}
+
+.body-footer{
+    text-align: center;
+    margin-top:5%;
+}
+
+.addi-alert{
+    text-decoration: underline!important;
+}
+
+.commit-btn{
+    text-align: center;
+    margin-top:5%;
+}
+
+textarea{
+    width:100%;
+    height:100px;
+    resize:none;
+}
+
+.file-input{
+    border:#767676 solid 1px;
+}
+.addr-input{
+    width:30%!important;
+    margin-right:1.5%;
+}

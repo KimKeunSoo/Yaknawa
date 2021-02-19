@@ -9,11 +9,11 @@ app.use(cors());
 app.use(bodyparser.json());
 //처음 실행화면 랜딩
 app.use('/',(req,res)=>res.json({username:'mindol8'}));
-
+//로그인화면 이동
 app.get('/login',(req,res)=>res.json({username:'mindol8'}));
-
-app.get('/priceform',(req,res)=>{
-    
-});
+//가격포럼 화면 이동
+app.get('/priceform',(req,res)=>{});
+//회원가입 화면 이동
+app.get('./joinus',(req,res)=>{});
 
 app.listen(port,()=>console.log(`Listening on port ${port}`));
