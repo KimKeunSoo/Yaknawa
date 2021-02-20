@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
-class Join_us extends PureComponent {
+class Share extends PureComponent {
     constructor(props) {
         super(props);
         this.url = 'http://localhost:8080';
@@ -17,16 +17,16 @@ class Join_us extends PureComponent {
 
     componentDidMount() {
         //백엔드 서버와 비동기 요청
-        fetch(`${this.url}/joinus`)
+        fetch(`${this.url}/share`)
             .then(res => res.json())
         //.then(data => this.setState({ username: data.username }));
     }
 
     render() {
         return (
-            <div className="Join_us">
+            <div className="Share">
                 <Header />
-                <body className="join_us-body">
+                <body className="share-body">
                     <Container fluid>
                         <Row>
                             <Col lg={2}></Col>
@@ -141,7 +141,7 @@ class Join_us extends PureComponent {
                                         </Col>
                                         <Col lg={6}>
                                             <div>
-                                                <textarea placeholder="200자 이내로 기입해주세요." maxlength="200"></textarea>
+                                                <textarea placeholder="200자 이내로 기입해주세요" maxlength="200"></textarea>
                                             </div>
                                         </Col>
                                         <Col lg={2}>
@@ -182,4 +182,4 @@ class Join_us extends PureComponent {
     }
 }
 
-export default Join_us;
+export default Share;

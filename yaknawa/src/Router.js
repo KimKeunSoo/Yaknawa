@@ -5,6 +5,9 @@ import Login from './component/Login';
 import PriceForm from './component/PriceForm';
 import Joinus from './component/Join_us';
 import Share from './component/Share';
+import Modify from './component/Modify';
+import Askbc from './component/Ask_by_company';
+import Noticeall from './component/Noticeboard_all';
 class Router extends PureComponent {
     render() {
         return (
@@ -14,6 +17,9 @@ class Router extends PureComponent {
                 <Route exact path="/priceform" component={PriceForm}/>
                 <Route exact path="/joinus" component={Joinus}/>
                 <Route exact path="/share" component={Share}/>
+                <Route exact path="/modify" component={Modify}/>
+                <Route exact path="/askbc" component={Askbc}/>
+                <Route exact path="/noticeall" component={Noticeall}/>
             </div>
         );
     }

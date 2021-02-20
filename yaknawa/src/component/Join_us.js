@@ -62,7 +62,7 @@ class Join_us extends PureComponent {
                                     <Row className="pw">
                                         <Col lg={1}></Col>
                                         <Col lg={2}>
-                                            <div className="item-lable">패스워드<sup>*</sup></div>
+                                            <div className="item-lable">비밀번호<sup>*</sup></div>
                                         </Col>
                                         <Col lg={6}>
                                             <div>
@@ -78,7 +78,7 @@ class Join_us extends PureComponent {
                                     <Row className="pw-check">
                                         <Col lg={1}></Col>
                                         <Col lg={2}>
-                                            <div className="item-lable">패스워드확인<sup>*</sup></div>
+                                            <div className="item-lable">비밀번호 확인<sup>*</sup></div>
                                         </Col>
                                         <Col lg={6}>
                                             <div>

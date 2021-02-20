@@ -1,4 +1,4 @@
-.join_us-body{
+.join_us-body,.noticeall-body,.modify-body,.share-body{
     margin:5% 0 3% 0;
 }
 
@@ -6,6 +6,7 @@
     text-align:center;
     font-size:35px;
 }
+
 
 .body-info{
     margin-top:2%;
@@ -69,4 +70,20 @@ textarea{
 .addr-input{
     width:30%!important;
     margin-right:1.5%;
+}
+
+.item-select{
+    border:#767676 solid 1px!important;
+}
+
+.ask-input{
+    height:300px!important;
+}
+
+.notice-table{
+    text-align: center;
+}
+
+.table-head{
+    border-bottom:#e6e6e6 solid 3px!important;
 }

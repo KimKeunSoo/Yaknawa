@@ -34,10 +34,10 @@ class Header extends PureComponent{
                             <Link to="/joinus">회원가입</Link>
                         </li>
                         <li className="user-tab-li">
-                            <a>공지사항</a>
+                            <Link to="/noticeall">공지사항</Link>
                         </li>
                         <li className="user-tab-li-last">
-                            <a>문의하기</a>
+                            <Link to="/askbc">문의하기</Link>
                         </li>
                     </ul>
                 </Col>
