@@ -23,7 +23,7 @@ const shareSchema = new Schema({
     required: true,
   },
   // 5. 구매 일자
-  date: {
+  purchaseDate: {
     type: Date,
     required: true,
   },
@@ -37,7 +37,7 @@ const shareSchema = new Schema({
     type: String,
   },
   // 8. 영수증 첨부
-  receipt: {},
+  receiptPath: {},
 });
 
-module.exports = mongoose.model("Share", shareSchema); // 4
+module.exports = mongoose.model("Share", shareSchema);
