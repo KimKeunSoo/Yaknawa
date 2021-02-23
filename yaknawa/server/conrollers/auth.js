@@ -9,19 +9,25 @@ const createUserData = async (userInput) => {
 
 const userWithEncodePassword = async ({
   // destructuring
-  email,
+  id,
   password,
-  name,
-  phone,
+  birthDay,
+  sex,
+  interestedM,
+  nickName,
+  email,
 }) => {
   const hashedPassword = await bcrypt.hash(password, 12); // 비밀번호를 암호화 하는 함수
 
   const user = new User({
     // User schema 사용, document 생성
-    email,
+    id,
     password: hashedPassword,
-    name,
-    phone,
+    birthDay,
+    sex,
+    interestedM,
+    nickName,
+    email,
   });
   return user;
 };
