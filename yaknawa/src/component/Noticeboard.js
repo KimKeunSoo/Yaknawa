@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
-import './component_css/Noticeboard.css';
+import React, { PureComponent } from "react";
+import "./component_css/Noticeboard.css";
 //import logo from './component_img/yaknawa-logo2.png';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 //import Table from 'react-bootstrap/Table';
 
 class Noticeboard extends PureComponent {
@@ -75,9 +75,31 @@ class Noticeboard extends PureComponent {
         );
     }
 
+        <div className="Noticeboard-table">
+          <div className="Noticeboard-item">
+            <a className="item-title">{this.state.n_title}</a>
+            <span className="item-date">{this.state.date}</span>
+          </div>
+          <div className="Noticeboard-item">
+            <a className="item-title">{this.state.n_title}</a>
+            <span className="item-date">{this.state.date}</span>
+          </div>
+          <div className="Noticeboard-item">
+            <a className="item-title">{this.state.n_title}</a>
+            <span className="item-date">{this.state.date}</span>
+          </div>
+          <div className="Noticeboard-item">
+            <a className="item-title">{this.state.n_title}</a>
+            <span className="item-date">{this.state.date}</span>
+          </div>
+          <div className="Noticeboard-item">
+            <a className="item-title">{this.state.n_title}</a>
+            <span className="item-date">{this.state.date}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Noticeboard;
-
-
-
