@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   // 1. ID
-  id: {
+  username: {
     type: String,
     required: [true, "아이디를 입력하세요"],
     match: [/^.{3,15}$/, "3 ~ 15 글자를 입력하세요"], // 정규 표현식
