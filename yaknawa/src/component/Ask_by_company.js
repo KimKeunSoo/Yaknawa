@@ -43,11 +43,11 @@ class Askbc extends PureComponent {
                                     <Row className="company-name">
                                         <Col lg={1}></Col>
                                         <Col lg={2}>
-                                            <div className="item-lable">회사명</div>
+                                            <div className="item-lable">제목</div>
                                         </Col>
                                         <Col lg={6}>
                                             <div>
-                                                <input type="text" placeholder="회사명을 입력해주세요" className="item-input"  autoFocus></input>
+                                                <input type="text" placeholder="제목을 입력해주세요" className="item-input"  autoFocus></input>
                                             </div>
                                         </Col>
                                         <Col lg={2}>
@@ -56,38 +56,7 @@ class Askbc extends PureComponent {
                                         <Col lg={1}></Col>
                                     </Row>
                                     <br />
-                                    <Row className="nickname">
-                                        <Col lg={1}></Col>
-                                        <Col lg={2}>
-                                            <div className="item-lable">닉네임</div>
-                                        </Col>
-                                        <Col lg={6}>
-                                            <div>
-                                                <input type="text" placeholder={this.state.nickname} className="item-input"></input>
-                                            </div>
-                                        </Col>
-                                        <Col lg={2}>
-                                           
-                                        </Col>
-                                        <Col lg={1}></Col>
-                                    </Row>
-                                    <br />
-                                    <Row className="email">
-                                        <Col lg={1}></Col>
-                                        <Col lg={2}>
-                                            <div className="item-lable">이메일</div>
-                                        </Col>
-                                        <Col lg={6}>
-                                            <div>
-                                                <input type="text" placeholder={this.state.email} className="item-input"></input>
-                                            </div>
-                                        </Col>
-                                        <Col lg={2}>
-                                           
-                                        </Col>
-                                        <Col lg={1}></Col>
-                                    </Row>
-                                    <br/>
+                                
                                     <Row className="ask">
                                         <Col lg={1}></Col>
                                         <Col lg={2}>

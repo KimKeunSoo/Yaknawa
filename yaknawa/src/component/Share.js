@@ -141,7 +141,7 @@ class Share extends PureComponent {
                                         </Col>
                                         <Col lg={6}>
                                             <div>
-                                                <textarea placeholder="200자 이내로 기입해주세요" maxlength="200"></textarea>
+                                                <textarea placeholder="200자 이내로 기입해주세요" maxlength="200" className="review-textarea"></textarea>
                                             </div>
                                         </Col>
                                         <Col lg={2}>

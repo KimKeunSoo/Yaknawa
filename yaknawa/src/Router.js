@@ -8,6 +8,8 @@ import Share from './component/Share';
 import Modify from './component/Modify';
 import Askbc from './component/Ask_by_company';
 import Noticeall from './component/Noticeboard_all';
+import Noticehot from './component/Noticeboard_hot';
+import Noticetheme from './component/Noticeboard_theme';
 class Router extends PureComponent {
     render() {
         return (
@@ -20,6 +22,8 @@ class Router extends PureComponent {
                 <Route exact path="/modify" component={Modify}/>
                 <Route exact path="/askbc" component={Askbc}/>
                 <Route exact path="/noticeall" component={Noticeall}/>
+                <Route exact path="/noticehot" component={Noticehot}/>
+                <Route exact path="/noticetheme" component={Noticetheme}/>
             </div>
         );
     }

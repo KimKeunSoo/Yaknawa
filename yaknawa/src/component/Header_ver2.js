@@ -74,10 +74,10 @@ class Header_ver2 extends PureComponent {
                         <Col lg={4} className="sub-search">
                             <Search />
                         </Col>
-                        <Col lg={1} className="main-tab">
+                        <Col lg={1} className="main-tab-btn">
                             <Link to="/share">
                                 <Button variant="success">
-                                    글쓰기
+                                    약값공유
                     </Button>
                             </Link>
                         </Col>
