@@ -39,6 +39,13 @@ const userSchema = new Schema({
     ],
     trim: true,
   },
+  // 8. 사용자 권한
+  roles: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Role",
+    },
+  ],
 });
 
 module.exports = mongoose.model("User", userSchema);
