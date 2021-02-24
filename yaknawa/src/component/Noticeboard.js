@@ -75,31 +75,6 @@ class Noticeboard extends PureComponent {
         );
     }
 
-        <div className="Noticeboard-table">
-          <div className="Noticeboard-item">
-            <a className="item-title">{this.state.n_title}</a>
-            <span className="item-date">{this.state.date}</span>
-          </div>
-          <div className="Noticeboard-item">
-            <a className="item-title">{this.state.n_title}</a>
-            <span className="item-date">{this.state.date}</span>
-          </div>
-          <div className="Noticeboard-item">
-            <a className="item-title">{this.state.n_title}</a>
-            <span className="item-date">{this.state.date}</span>
-          </div>
-          <div className="Noticeboard-item">
-            <a className="item-title">{this.state.n_title}</a>
-            <span className="item-date">{this.state.date}</span>
-          </div>
-          <div className="Noticeboard-item">
-            <a className="item-title">{this.state.n_title}</a>
-            <span className="item-date">{this.state.date}</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
 }
 
 export default Noticeboard;
