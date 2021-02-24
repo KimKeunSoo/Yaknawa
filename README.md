@@ -17,6 +17,16 @@
 
 ## 사용법
 
+사용 모듈
+
+- react // REST api build
+- express 
+- mongoose
+- body-parser // parse the request & create `req.body`
+- cors // CORS를 사용하기 위해 Express 미들웨어 제공
+- jsonwebtoken // 정보 암호화
+- bcryptjs //암호해싱
+
 1. 다운
 2. `npm install`
 3. `npm start`
