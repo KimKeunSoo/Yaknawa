@@ -1,12 +1,34 @@
-.join_us-body,.noticeall-body,.modify-body,.share-body{
+.join_us-body,.noticeall-body,.modify-body,.share-body,.Login-body,.noticehot-body,.noticetheme-body{
     margin:5% 0 3% 0;
 }
 
+.board-item-left{
+    border-right:solid 3px #e6e6e6;
+}
+.board-item{
+    padding:1% 1% 1% 1%;
+    border-bottom:solid 3px #e6e6e6;
+}
+.board-item-top{
+    border-top:solid 3px #e6e6e6;
+    
+}
 .body-title{
     text-align:center;
     font-size:35px;
 }
+.board-item-uptime{
+    float:right;
+    font-size:10px;
+}
 
+.body-title-left{
+    text-align: left!important;
+}
+
+.write-board{
+    float: right;
+}
 
 .body-info{
     margin-top:2%;
@@ -23,12 +45,24 @@ sup{
     padding-top:5%;
     border-top:solid 3px #e6e6e6;
 }
-
+.body-theme-item{
+    margin-top:5%;
+    padding-top:1%;
+    border-top:solid 3px #e6e6e6;
+}
+.body-theme-list{
+    margin-bottom:1%;
+}
+.body-item-board{
+    margin-top:2%!important;
+}
 .item-lable{
     margin-bottom:5%;
     margin-top:5%;
 }
-
+.board-theme-item{
+   text-align: center;
+}
 .item-input{  
     margin-top:1%; 
     width:100%;
@@ -86,4 +120,18 @@ textarea{
 
 .table-head{
     border-bottom:#e6e6e6 solid 3px!important;
+}
+
+.review-textarea{
+    resize: none;
+    
+}
+
+.login-label{
+    text-align: center;
+}
+
+.find-info{
+    font-size: 11px;
+    text-align: center;
 }

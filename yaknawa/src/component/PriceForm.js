@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import './component_css/PriceForm.css';
-import Header from "./Header_ver2";
+import Header from "./Header";
 import Footer from './Footer';
 import logo from './component_img/yaknawa-logo2.png';
 import Container from 'react-bootstrap/Container';
@@ -53,7 +53,7 @@ class PriceForm extends React.Component {
                                             <div className="search-body">
                                                 <form>
                                                     <input className="search-box" type="text" placeholder="약이름, 약국이름을 검색하세요."></input>
-                                                    <input className="search-btn" type="submit" value="검색"></input>
+                                                    
                                                 </form>
                                             </div>
                                         </Col>
@@ -87,8 +87,8 @@ class PriceForm extends React.Component {
                     </Container>
                     <Container fluid className="realtime-body">
                         <Row>
-                            <Col lg={1}></Col>
-                            <Col lg={10}>
+                            <Col lg={2}></Col>
+                            <Col lg={8}>
                                 <div className="realtime-box">
                                     <div className="realtime-title">
                                         <strong>실시간 의약품 가격보기</strong>
@@ -152,7 +152,7 @@ class PriceForm extends React.Component {
                                     </Container>
                                 </div>
                             </Col>
-                            <Col lg={1}></Col>
+                            <Col lg={2}></Col>
                         </Row>
                     </Container>
                 </body>

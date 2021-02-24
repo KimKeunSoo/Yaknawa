@@ -17,12 +17,13 @@ class Search extends PureComponent {
         alert("click");
     }
 
+    //엔터로 submit
+    
     render() {
         return (
             <div className="search-form">
                 <form onSubmit={this.click_alert}>
-                    <input className="search-box" type="text" placeholder="검색"></input>
-                    <input className="search-btn" type="submit" value="검색"></input>
+                    <input className="search-box" type="text" placeholder="관심있는 내용을 검색해보세요"></input>
                 </form>
             </div>
         );

@@ -12,7 +12,8 @@ class Noticeboard extends PureComponent {
         this.state = {
             title: '인기게시글'//여기서 게시판명 받아와서 삽입
             , n_title: '게시글 제목'
-            , date: '글쓴날짜'
+            , date: '좋아요/댓글수'
+            //date 변수명 수정 + 좋아요,댓글수 분리
         };
     }
     render() {

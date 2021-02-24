@@ -21,4 +21,8 @@ app.get('/modify',(req,res)=>res.json({username:'mindol8'}));
 app.get('./askbc',(req,res)=>{});
 //공지사항 화면 이동
 app.get('./noticeall',(req,res)=>{});
+//인기글 화면 이동
+app.get('./noticehot',(req,res)=>{});
+//게시글 화면 이동
+app.get('./noticetheme',(req,res)=>res.json({theme:["여드름","탈모","비만","영양제","피임","발기부전"]}));
 app.listen(port,()=>console.log(`Listening on port ${port}`));

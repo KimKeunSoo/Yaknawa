@@ -144,7 +144,9 @@ class Join_us extends PureComponent {
                                         </Col>
                                         <Col lg={6}>
                                             <div>
-                                                <input type="text" placeholder="ex)프로페시아" className="item-input"></input>
+                                                <select className="item-input">
+                                                    <option>의약품1</option>
+                                                </select>
                                             </div>
                                         </Col>
                                         <Col lg={2}>
