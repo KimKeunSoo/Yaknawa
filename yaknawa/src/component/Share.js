@@ -32,7 +32,7 @@ class Share extends PureComponent {
                             <Col lg={2}></Col>
                             <Col lg={8}>
                                 <div className="body-title">
-                                    <strong>가격공유</strong>
+                                    <strong>약값공유</strong>
                                 </div>
                                 <div className="body-info">
                                     필수사항<sup>*</sup>

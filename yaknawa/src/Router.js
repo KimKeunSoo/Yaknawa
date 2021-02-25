@@ -10,6 +10,8 @@ import Askbc from './component/Ask_by_company';
 import Noticeall from './component/Noticeboard_all';
 import Noticehot from './component/Noticeboard_hot';
 import Noticetheme from './component/Noticeboard_theme';
+import Noticewrite from './component/Noticeboard_write';
+import Noticeread from './component/Noticeboard_read';
 class Router extends PureComponent {
     render() {
         return (
@@ -24,6 +26,8 @@ class Router extends PureComponent {
                 <Route exact path="/noticeall" component={Noticeall}/>
                 <Route exact path="/noticehot" component={Noticehot}/>
                 <Route exact path="/noticetheme" component={Noticetheme}/>
+                <Route exact path="/noticewrite" component={Noticewrite}/>
+                <Route exact path="/noticeread" component={Noticeread}/>
             </div>
         );
     }
