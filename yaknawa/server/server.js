@@ -2,13 +2,14 @@ const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
 const cors = require('cors');
+const axios = require("axios");
 
 const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(bodyparser.json());
 //처음 실행화면 랜딩
-app.use('/',(req,res)=>res.json({username:'mindol8'}));
+app.use('/',(req,res)=>{});
 //로그인화면 이동
 app.get('/login',(req,res)=>res.json({username:'mindol8'}));
 //가격포럼 화면 이동
@@ -27,6 +28,8 @@ app.get('/noticehot',(req,res)=>{});
 app.get('/noticetheme',(req,res)=>res.json({theme:["여드름","탈모","비만","영양제","피임","발기부전"]}));
 //게시글 쓰기 화면 이동
 app.get('/noticewrite',(req,res)=>res.json({theme:'게시판명'}));
+
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}.`);
   });

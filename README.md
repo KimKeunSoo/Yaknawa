@@ -26,6 +26,7 @@
 - cors // CORS를 사용하기 위해 Express 미들웨어 제공
 - jsonwebtoken // 정보 암호화
 - bcryptjs //암호해싱
+- sweetalert2, bootstrap
 
 1. 다운
 2. `npm install`
