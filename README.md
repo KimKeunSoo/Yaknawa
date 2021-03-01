@@ -19,13 +19,14 @@
 
 사용 모듈
 
-- react // REST api build
-- express 
-- mongoose
-- body-parser // parse the request & create `req.body`
-- cors // CORS를 사용하기 위해 Express 미들웨어 제공
-- jsonwebtoken // 정보 암호화
-- bcryptjs //암호해싱
+- react // REST api build, 웹/앱 view
+- express // nodejs 웹프레임워크
+- mongoose // mongodb와 연결
+- body-parser // parse the request & create `req.body` 역할
+- cors // CORS를 사용하기 위해 Express 미들웨어 제공 
+- jsonwebtoken // 정보 암호화(권한/토큰 부여) 
+- bcryptjs //암호해싱해서 DB에 저장할때 씀
+- axios // promise api 를 활용하는 http 비동기 통신
 
 1. 다운
 2. `npm install`
@@ -65,3 +66,22 @@
 
 ##### 일요일 회의 일정은 근수가 토요일 확실히 미리 얘기해주기
 
+#### 2021년 03월 01일 12:00 ~ 12:30 1차 보고
+
+##### 대표 할일
+
+1. 개발 용도 아닌 운영 용도 비급여진료비 데이터 신청
+2. 비급여 디자인
+3. 관리자 디자인
+
+##### 민석 할일
+
+1. 대표 의견 기반 수정
+2. 지도 api 기능 flag까지 구현
+
+##### 근수 할일(~03.14)
+
+1. 로그인 기능 마저 구현
+2. DB Table완성
+3. 원래 DB값 가져와서 적용
+4. 서울시 약국 DB 가져오기
