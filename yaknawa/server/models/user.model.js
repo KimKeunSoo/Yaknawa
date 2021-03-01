@@ -14,7 +14,6 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: [true, "패스워드를 입력하세요!"],
-    select: false, // User model을 읽어올때, 비밀번호 값을 읽어오지 못하도록 설정
   },
   // 3. 생년월일
   birthDay: {
@@ -25,9 +24,9 @@ const userSchema = new Schema({
   // 5. 관심 의약품
   interestedM: {},
   // 6. 닉네임
-  nickName: {
+  nickname: {
     type: String,
-    required: true,
+    required: [true, "닉네임을 입력하세요!"],
   },
   // 7. 이메일 주소
   email: {

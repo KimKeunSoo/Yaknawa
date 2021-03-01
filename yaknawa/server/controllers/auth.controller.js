@@ -9,8 +9,9 @@ var bcrypt = require("bcryptjs");
 exports.signup = (req, res) => {
   const user = new User({
     username: req.body.username,
-    email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 8),
+    email: req.body.email,
+    nickname: req.body.nickname,
   });
 
   user.save((err, user) => {
@@ -77,6 +78,7 @@ exports.signin = (req, res) => {
         return res.status(404).send({ message: "User Not found." });
       }
 
+      console.log(user);
       var passwordIsValid = bcrypt.compareSync(
         req.body.password,
         user.password
@@ -102,6 +104,7 @@ exports.signin = (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        nickname: user.nickname,
         roles: authorities,
         accessToken: token,
       });
