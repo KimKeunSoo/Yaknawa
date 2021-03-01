@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import './component_css/Header.css';
 import Search from './Search';
-import logo from './component_img/yaknawa-logo2.png';
+import logo from './component_img/yaknawa-logo-final.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

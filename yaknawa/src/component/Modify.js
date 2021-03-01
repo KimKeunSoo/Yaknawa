@@ -29,6 +29,7 @@ class Modify extends PureComponent {
 
     render() {
         const { username,medi_item2,medi_itme1 } = this.state;
+        console.log(username);
         return (
             <div className="modify">
                 <Header />

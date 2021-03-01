@@ -26,6 +26,7 @@
 - cors // CORS를 사용하기 위해 Express 미들웨어 제공 
 - jsonwebtoken // 정보 암호화(권한/토큰 부여) 
 - bcryptjs //암호해싱해서 DB에 저장할때 씀
+- sweetalert2, bootstrap
 - axios // promise api 를 활용하는 http 비동기 통신
 
 1. 다운

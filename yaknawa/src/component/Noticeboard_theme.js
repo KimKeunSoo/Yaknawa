@@ -38,7 +38,7 @@ class Noticetheme extends PureComponent {
                                 <span className="body-title body-title-left">
                                     <strong>{this.state.theme[0]} 게시글</strong>
                                     <span className="write-board">
-                                    <Link >
+                                    <Link to="/noticewrite">
                                         <Button variant="success">
                                             글쓰기
                                         </Button>

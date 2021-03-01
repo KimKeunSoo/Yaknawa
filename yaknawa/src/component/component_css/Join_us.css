@@ -1,4 +1,4 @@
-.join_us-body,.noticeall-body,.modify-body,.share-body,.Login-body,.noticehot-body,.noticetheme-body{
+.join_us-body,.noticeall-body,.modify-body,.share-body,.Login-body,.noticehot-body,.noticetheme-body,.noticewrite-body,.noticeread-body{
     margin:5% 0 3% 0;
 }
 
@@ -39,7 +39,10 @@
 sup{
     color:red;
 }
-
+.item-sub-lable{
+    font-size: 13px;
+    color:gray!important;
+}
 .body-item{
     margin-top:5%;
     padding-top:5%;
@@ -47,6 +50,18 @@ sup{
 }
 .body-theme-item{
     margin-top:5%;
+    padding-top:1%;
+    border-top:solid 3px #e6e6e6;
+}
+.underline-bottom{
+    border-bottom:solid 3px #e6e6e6;
+}
+.body-commentread-item{
+    padding-top:1%;
+    padding-bottom:1%;
+}
+.body-comment-item{
+    margin-top:1%;
     padding-top:1%;
     border-top:solid 3px #e6e6e6;
 }
@@ -134,4 +149,40 @@ textarea{
 .find-info{
     font-size: 11px;
     text-align: center;
+}
+.noticewrite-box{
+    border:#e6e6e6 solid 3px!important;
+    padding:1% 1% 1% 1%;
+}
+
+.write-textarea{
+    resize: none!important;
+}
+.item-mid{
+    text-align: center;
+}
+.item-left{
+    text-align: left;
+}
+.item-right{
+    text-align: right;
+}
+.write-body-btn{
+    margin-top:1%;
+}
+
+.noticewrite-btn{
+    width:100%;
+}
+
+.commentread-body-title{
+    font-size: 13px;
+}
+.commentwrite-btn{
+    width:100%;
+    font-size: 13px!important;
+}
+
+.noticeread-theme{
+    font-size: 20px;
 }
