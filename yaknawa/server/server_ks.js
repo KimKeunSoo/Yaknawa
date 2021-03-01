@@ -5,6 +5,7 @@ const dbConfig = require("./config/db.config");
 
 const app = express();
 
+//cors는 서버 포트와 다르게 함
 var corsOptions = {
   origin: "http://localhost:8081",
 };
