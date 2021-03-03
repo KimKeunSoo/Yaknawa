@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../style/css/style.css';
 
-const Board = (props) => {
+const Card = (props) => {
   const pills = props.pills;
   const low = props.low;
   const high = props.high;
@@ -15,4 +15,4 @@ const Board = (props) => {
   );
 }
 
-export default Board;
+export default Card;

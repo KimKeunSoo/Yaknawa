@@ -8,11 +8,11 @@ const Board = (props) => {
     <div className="board">
       <div className="board-title text-lg underline">
         <strong>{title}</strong>
-        <p className="text-sm position-right "><Link className="link-black link-nonunderline">더보기+</Link></p>
+        <p className="text-sm position-right "><Link className="link-black link-nonunderline" to="/noticeboard/인기">더보기+</Link></p>
       </div>
       <div className="board-body">
         <div className="board-item">
-          <Link className="board-item-title link-black link-nonunderline position-left">게시글 제목</Link>
+          <Link  className="board-item-title link-black link-nonunderline position-left">게시글 제목</Link>
           <p className="position-right board-item-sub">좋아요/댓글 수</p>
         </div>
         <br />
@@ -35,6 +35,8 @@ const Board = (props) => {
           <Link className="board-item-title link-black link-nonunderline position-left">게시글 제목</Link>
           <p className="position-right board-item-sub">좋아요/댓글 수</p>
         </div>
+        <br/>
+        <br/>
       </div>
     </div>
   );
