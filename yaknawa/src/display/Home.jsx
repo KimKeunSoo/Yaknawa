@@ -7,7 +7,7 @@ import Search from '../component/Action/Search';
 import '../style/css/style.css';
 
 const Home = (props) => {
-    const most = "인기게시글";
+    const most = "인기";
     const theme1 = "비만";
     const theme2 = "영양제";
     const theme3 = "여드름";
@@ -16,7 +16,7 @@ const Home = (props) => {
     const theme6 = "탈모";
     return (
         <div>
-            <Header type="home"/>
+            <Header/>
             <div className="body">
                 <Search />
                 <Grid container spacing={5}>

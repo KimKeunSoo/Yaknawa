@@ -78,7 +78,7 @@ const Share = (props) => {
     }
     return (
         <div>
-            <Header />
+            <Header/>
             <div className="body">
                 <div className="position-center text-lg"><strong>약값 공유</strong></div>
                 <div className="position-right text-sm padding-right-lg">필수사항<sup>*</sup></div>

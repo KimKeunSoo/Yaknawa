@@ -12,6 +12,8 @@ import Modify from './display/Modify';
 import Noticeall from './display/Noticeboard_all';
 import Noticeboard from './display/Noticeboard';
 import Askbc from './display/Askbc';
+import Noticewrite from './display/Noticeboard_write';
+import Noticeread from './display/Noticeboard_read';
 class Router extends PureComponent {
     render() {
         return (
@@ -29,6 +31,10 @@ class Router extends PureComponent {
                 <Route  path="/noticeboard/:theme" component={Noticeboard} />
                 <Route exact path="/noticeboard" component={Noticeboard} />
                 <Route exact path="/askbc" component={Askbc} />
+                <Route exact path="/noticewrite/:theme" component={Noticewrite} />
+                <Route exact path="/noticewrite" component={Noticewrite} />
+                <Route exact path="/noticeread/:theme/:num" component={Noticeread} />
+                <Route exact path="/noticeread" component={Noticeread} />
             </div>
         );
     }

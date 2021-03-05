@@ -70,7 +70,7 @@ const Modify = (props) => {
 
     return (
         <div>
-            <Header />
+            <Header/>
             <div className="body">
                 <div className="position-center text-lg"><strong>정보 수정</strong></div>
 

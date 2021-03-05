@@ -20,7 +20,7 @@ const Menu_tab = (props) => {
                         <Link to="/priceform" className="link-black link-nonunderline">약값 비교</Link>
                     </li>
                     <li className="li-horizon li-space-lg">
-                        <Link to="/modify" className="link-black link-nonunderline">비급여 진료비</Link>
+                        <Link to="/" className="link-black link-nonunderline">비급여 진료비</Link>
                     </li>
                 </ul>
             </Grid>

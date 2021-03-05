@@ -13,6 +13,7 @@ const Login = (props) => {
     const form = useRef();
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
+    const [role, setRole] = useState("");
     const onChangeId = (e) => {
         const id = e.target.value;
         setId(id);
@@ -23,9 +24,17 @@ const Login = (props) => {
 
     };
 
+    const clickLogin=()=>{
+        setRole("user");
+        //세션설정
+        window.sessionStorage.setItem("role",role);
+        console.log(window.sessionStorage);
+        window.location.replace("/")
+    }
+
     return (
         <div>
-            <Header />
+            <Header/>
             <div className="body">
                 <div className="position-center text-lg"><strong>로그인</strong></div>
                 <div className="upperline share-body left-space-lg right-space-lg ">
@@ -61,7 +70,7 @@ const Login = (props) => {
                                 </div>
                                 <br/><br/>
                             
-                                <Button variant="contained" color="primary" className=" position-center size-full">
+                                <Button variant="contained" color="primary" className=" position-center size-full" onClick={clickLogin}>
                             로그인
                                 </Button>
                             </Grid>

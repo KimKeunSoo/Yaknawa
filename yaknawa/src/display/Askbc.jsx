@@ -39,7 +39,7 @@ const Askbc = (props) => {
     }
     return (
         <div>
-            <Header />
+            <Header/>
             <div className="body">
                 <div className="position-center text-lg"><strong>문의하기</strong></div>
                 <div className="upperline share-body left-space-lg right-space-lg">

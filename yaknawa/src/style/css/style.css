@@ -126,6 +126,9 @@ sup{
 .upperline{
     border-top:#e6e6e6 solid 3px;
 }
+.outline-all{   
+    border: #e6e6e6 3px solid;
+}
 
 .share-btn{
     background-color: green!important;
@@ -294,7 +297,7 @@ sup{
 }
 
 .textarea-onfocus:focus{
-    outline-color: #4548ff;
+    outline-color: #4547b5;
 }
 
 .form-file{

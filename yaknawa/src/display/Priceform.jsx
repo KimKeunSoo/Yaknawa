@@ -14,7 +14,7 @@ const Priceform = (props) => {
     const high = "최고가";
     return (
         <div>
-            <Header />
+            <Header/>
             <div className="body">
                 <p className="position-center text-md">본 서비스는 서울 특별시 위주의 서비스로 제공됩니다.</p>
                 <br />

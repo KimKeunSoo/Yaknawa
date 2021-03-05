@@ -17,16 +17,23 @@ const Noticeboard = (props) => {
     const thumb = "좋아요수";
     const click = "조회수";
     const theme = props.match.params.theme;
-    console.log(theme);
- 
+    //console.log(theme);
+    
+    const themeLink =()=>{
+        const link = `/noticewrite/${theme}`;
+        props.history.push(link);
+    }
+
     return (
         <div>
-            <Header />
+            <Header/>
             <div className="body">
                 <div className="position-center text-lg"><strong>{theme} 게시판</strong></div>
-                <Button variant="contained" color="primary" className="position-right share-btn right-space-lg">
+                <div className="position-right text-sm padding-right-lg">
+                    <Button variant="contained" color="primary" className="share-btn" onClick={themeLink}>
                         글쓰기
-                </Button>
+                </Button></div>
+                
                 <div className="upperline share-body left-space-lg right-space-lg ">
                     <div className="upperline underline padding-top-sm padding-bottom-sm position-center">
                         <Grid container>                            
@@ -54,16 +61,16 @@ const Noticeboard = (props) => {
                     </div>
                     <Grid container className="top-space-xs" spacing={0}>
                         <Grid item lg={6} className="board-card-body">
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} />
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
                         </Grid>
                         <Grid item lg={6} className="board-card-body">
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} />
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
                         </Grid>
                     </Grid>
                 </div>

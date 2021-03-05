@@ -31,7 +31,7 @@ const Noticeall = (props) => {
 
     return (
         <div>
-            <Header />
+            <Header/>
             <div className="body">
                 <div className="position-center text-lg"><strong>공지사항</strong></div>
                 <div className="upperline share-body left-space-lg right-space-lg">

@@ -110,7 +110,7 @@ const JoinUs = (props) => {
     }
     return (
         <div>
-            <Header />
+           <Header/>
             <div className="body">
                 <div className="position-center text-lg"><strong>회원가입</strong></div>
                 <div className="position-right text-sm padding-right-lg">필수사항<sup>*</sup></div>
