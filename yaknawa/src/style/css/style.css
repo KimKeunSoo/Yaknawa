@@ -1,0 +1,328 @@
+sup{
+    color:red;
+}
+.header{
+    margin:3% 15% 0 15%;
+    padding:1% 1% 0 1%;
+}
+.footer{
+    margin:0 15% 0 15%;
+    padding:1%;
+    background-color: #f3f3f3;
+}
+.body{
+    margin:3% 15% 3% 15%!important;
+}
+.board{
+    margin-top:3%;
+    padding:2% 2% 2% 2%;
+}
+.board-most-grid{
+    padding:0!important;
+    margin-left:0!important;
+    margin-right:0!important;
+}
+.board-theme-grid{
+    padding-left:1.5%;
+    padding-right:1.5%;
+}
+.board-title{
+    margin-left:1.5%;
+    padding-bottom:1.5%;
+}
+.board-body{
+    margin:1% 3% 1% 3%;
+}
+
+.board-item{
+    margin-bottom:0.75%;
+    margin-top:0.75%;
+}
+.board-item-sub{
+    margin:0!important;
+}
+.share-body{
+    margin-top:3%;
+    padding:3% 3% 3% 3%;
+}
+.htu, .dop, .tos{
+    margin-left:3%;
+    margin-right:3%;
+}
+.tos{
+    color:gray;
+}
+.position-center{
+    text-align: center;
+}
+
+.position-right{
+   float:right;
+}
+
+.position-left{
+    float:left;
+}
+
+.link-black{
+    color:black!important;
+}
+.link-gray{
+    color:gray!important;
+}
+.link-nonunderline{
+    text-decoration: none;
+}
+
+.link-cursor-pointer{
+    cursor: pointer;
+}
+.text-sm{
+    font-size:13px;
+}
+.text-md{
+    font-size:20px;
+}
+.text-xs{
+    font-size:10px;
+}
+.text-lg{
+    font-size:25px;
+}
+.ul-horizon{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.li-horizon{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+    float: left;
+}
+
+.li-space-lg{
+    margin-right:5%!important;
+}
+.li-space-sm{
+    margin-right:2%!important;
+}
+.fluid{
+    width:100%;
+}
+
+.logo-header{
+    width:80%;
+}
+
+.go-bottom{
+    padding-top:4%!important;
+}
+
+.underline{
+    border-bottom:#e6e6e6 solid 3px;
+}
+.upperline{
+    border-top:#e6e6e6 solid 3px;
+}
+.outline-all{   
+    border: #e6e6e6 3px solid;
+}
+
+.share-btn{
+    background-color: green!important;
+    margin-bottom:3%!important;
+}
+.share-btn-position{
+    padding-top:3.8%!important;
+}
+.search-form{
+    width: 100%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border:solid 3px green!important;
+}
+
+.search-box{
+    padding:1% 0 1% 1%;
+    border: none; 
+    background: transparent;
+    width:89%;
+  }
+  .search-box:focus{
+    outline:none;
+  }
+  .search-btn{
+    border: none; 
+    background: transparent;
+    width:10%;
+  }
+
+.license-text{
+    color:#959595;
+    margin-top:3%;
+}
+.license-space{
+    padding:5% 0 1% 0;
+}
+
+.priceform-img{
+    box-shadow: 5px 5px 5px gray;
+    width:100%;
+}
+
+.left-space-lg{
+    margin-left:5%;
+}
+
+.left-space-sm{
+    margin-left:3%;
+}
+
+.left-space-xs{
+    margin-left:1.5%;
+}
+
+.right-space-lg{
+    margin-right:5%;
+}
+
+.right-space-sm{
+    margin-right:3%;
+}
+
+.right-space-xs{
+    margin-right:1.5%;
+}
+.bottom-space-lg{
+    margin-bottom:7%;
+}
+.bottom-space-sm{
+    margin-bottom:3%;
+}
+.bottom-space-xs{
+    margin-bottom:1.5%;
+}
+.top-space-lg{
+    margin-top:5%;
+}
+.top-space-sm{
+    margin-top:3%;
+}
+.top-space-xs{
+    margin-top:1.5%;
+}
+.card{
+    padding:3%;
+    border:1px solid #959595;
+}
+
+.padding-left-lg{
+    padding-left:5%;
+}
+.padding-left-md{
+    padding-left:3%;
+}
+.padding-left-sm{
+    padding-left:1.5%;
+}
+.padding-right-lg{
+    padding-right:5%;
+}
+.padding-right-md{
+    padding-right:3%;
+}
+.padding-right-sm{
+    padding-right:1.5%;
+}
+.padding-top-lg{
+    padding-top:5%;
+}
+.padding-top-md{
+    padding-top:3%;
+}
+.padding-top-sm{
+    padding-top:1.5%;
+}
+.padding-bottom-lg{
+    padding-bottom:5%;
+}
+.padding-bottom-md{
+    padding-bottom:3%;
+}
+.padding-bottom-sm{
+    padding-bottom:1.5%;
+}
+
+.size-full{
+    width:100%;
+}
+
+.size-half{
+    width:50%;
+}
+.size-quarter{
+    width:25%;
+}
+.size-half-quarter{
+    width:75%;
+}
+
+.size-big{
+    height:25px;
+}
+
+.form-label{
+    padding-top:0.5%;
+    margin-bottom:1%;
+}
+
+.form-control{
+    margin-bottom:5%;
+    padding-top:3%;
+}
+
+.textarea-resizenone{
+    resize: none;
+}
+
+.textarea-size-md{
+    height:100px;
+}
+.textarea-size-lg{
+    height:300px;
+}
+
+.textarea-onfocus:focus{
+    outline-color: #4547b5;
+}
+
+.form-file{
+    box-shadow: 5px 5px 5px gray;
+}
+
+.search-icon-box{
+    padding:0.6% 0 1.4% 1%;
+    margin-left:0.5%;
+    border: none; 
+    background: transparent;
+}
+
+.set-gray{
+    color:gray!important;
+}
+
+.login-box{
+   margin:7% 0 8% 0;
+}
+
+.radio-item-form{
+    margin-right:15%!important;
+   
+}
+.board-card-body{
+    padding:0.5% 0.5% 0.5% 0.5%;
+}

@@ -30,6 +30,7 @@ app.get('/noticetheme',(req,res)=>res.json({theme:["여드름","탈모","비만"
 app.get('/noticewrite',(req,res)=>res.json({theme:'게시판명'}));
 
 
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}.`);
   });
