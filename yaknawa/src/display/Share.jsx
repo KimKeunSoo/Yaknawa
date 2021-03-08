@@ -6,9 +6,11 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import setTitle from '../services/set-title';
 import '../style/css/style.css';
 
 const Share = (props) => {
+    setTitle("약값공유");
     const form = useRef();
     const pharmacyRef = useRef();
     const [pharmacy, setPharmacy] = useState("");

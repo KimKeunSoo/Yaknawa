@@ -3,8 +3,10 @@ import Header from '../component/Header/Header';
 import Footer from '../component/Footer/Footer';
 import { Link } from 'react-router-dom';
 import '../style/css/style.css';
+import setTitle from '../services/set-title';
 
 const Home = (props)=>{
+    setTitle("이용약관");
     return(
         <div>
             <Header/>

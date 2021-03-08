@@ -6,10 +6,12 @@ import Form from "react-validation/build/form";
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import setTitle from '../services/set-title';
 
 import '../style/css/style.css';
 
 const Login = (props) => {
+    setTitle("로그인");
     const form = useRef();
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");

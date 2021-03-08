@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Boardcard from '../component/Body/Board_card';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-
+import setTitle from '../services/set-title';
 
 import '../style/css/style.css';
 
@@ -18,59 +18,51 @@ const Noticeboard = (props) => {
     const click = "조회수";
     const theme = props.match.params.theme;
     //console.log(theme);
-    
-    const themeLink =()=>{
+    setTitle(`게시판`);
+    const themeLink = () => {
         const link = `/noticewrite/${theme}`;
         props.history.push(link);
+    }
+    const themeList = ["여드름","탈모","비만","영양제","피임","발기부전"];
+    const slide=[];
+    for(let i=0;i<themeList.length;i++){
+        slide.push(
+            <Grid item lg={2} className={theme === `${themeList[i]}`?"underline-impact padding-bottom-sm":"underline padding-bottom-sm"} >
+            <Link to = {`/noticeboard/${themeList[i]}`} className="position-center link-black link-nonunderline text-md">{themeList[i]}</Link>
+        </Grid>
+        );
     }
 
     return (
         <div>
-            <Header/>
+            <Header />
             <div className="body">
-                <div className="position-center text-lg"><strong>{theme} 게시판</strong></div>
+                <div className=" padding-bottom-sm position-center bottom-space-sm">
+                    <Grid container>
+                        {slide}
+                    </Grid>
+
+                </div>
+                <div className="padding-left-lg text-lg"><strong>{theme} 게시판</strong></div>
                 <div className="position-right text-sm padding-right-lg">
                     <Button variant="contained" color="primary" className="share-btn" onClick={themeLink}>
                         글쓰기
                 </Button></div>
-                
+
                 <div className="upperline share-body left-space-lg right-space-lg ">
-                    <div className="upperline underline padding-top-sm padding-bottom-sm position-center">
-                        <Grid container>                            
-                            <Grid item lg={2}>
-                                <Link to="/noticeboard/여드름" className="position-center link-black link-nonunderline text-md">여드름</Link>
-                            </Grid>
-                            <Grid item lg={2}>
-                                <Link to="/noticeboard/탈모" className="position-center link-black link-nonunderline text-md">탈모</Link>
-                            </Grid>
-                            <Grid item lg={2}>
-                                <Link to="/noticeboard/비만" className="position-center link-black link-nonunderline text-md">비만</Link>
-                            </Grid>
-                            <Grid item lg={2}>
-                                <Link to="/noticeboard/영양제" className="position-center link-black link-nonunderline text-md">영양제</Link>
-                            </Grid>
-                            <Grid item lg={2}>
-                                <Link to="/noticeboard/피임" className="position-center link-black link-nonunderline text-md">피임</Link>
-                            </Grid>
-                            <Grid item lg={2}>
-                                <Link to="/noticeboard/발기부전" className="position-center link-black link-nonunderline text-md">발기부전</Link>
-                            </Grid>
 
-                        </Grid>
-
-                    </div>
-                    <Grid container className="top-space-xs" spacing={0}>
+                    <Grid container className="top-space-xs" >
                         <Grid item lg={6} className="board-card-body">
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
                         </Grid>
                         <Grid item lg={6} className="board-card-body">
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme = {theme}/>
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
                         </Grid>
                     </Grid>
                 </div>

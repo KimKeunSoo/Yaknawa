@@ -20,14 +20,14 @@ const Menu_tab = (props) => {
                         <Link to="/priceform" className="link-black link-nonunderline">약값 비교</Link>
                     </li>
                     <li className="li-horizon li-space-lg">
-                        <Link to="/" className="link-black link-nonunderline">비급여 진료비</Link>
+                        <Link to="/" className="link-black link-nonunderline">병원별 진료비</Link>
                     </li>
                 </ul>
             </Grid>
             <Grid item lg={4} className="go-bottom"></Grid>
             <Grid item lg={2} className="go-bottom">
                 <Link to="/share" className="link-nonunderline position-right">
-                    <Button variant="contained" color="primary" className="share-btn right-space-lg">
+                    <Button variant="contained" color="primary" className="share-btn ">
                         약값공유
                     </Button>
                 </Link>

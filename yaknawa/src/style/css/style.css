@@ -2,12 +2,12 @@ sup{
     color:red;
 }
 .header{
-    margin:3% 15% 0 15%;
-    padding:1% 1% 0 1%;
+    margin:3% 0 0 0;
+    padding:1% 15% 0 15%;
 }
 .footer{
-    margin:0 15% 0 15%;
-    padding:1%;
+    margin:0 0 0 0;
+    padding:1% 15% 1% 15%;
     background-color: #f3f3f3;
 }
 .body{
@@ -89,6 +89,9 @@ sup{
 .text-lg{
     font-size:25px;
 }
+.text-xl{
+    font-size:50px;
+}
 .ul-horizon{
     list-style:none;
     margin:0;
@@ -122,6 +125,9 @@ sup{
 
 .underline{
     border-bottom:#e6e6e6 solid 3px;
+}
+.underline-impact{
+    border-bottom:gray solid 6px;
 }
 .upperline{
     border-top:#e6e6e6 solid 3px;
@@ -160,7 +166,24 @@ sup{
     background: transparent;
     width:10%;
   }
+.btn-noborder-transparent{
+    border: none; 
+    background: transparent;
+    width:100%;
+}
 
+.btn-noborder-transparent:hover{
+    border:none!important;
+    outline: none;
+}
+.btn-noborder-transparent:active{
+    border:none!important;
+    outline: none;
+}
+.btn-noborder-transparent:visited{
+    border:none!important;
+    outline: none;
+}
 .license-text{
     color:#959595;
     margin-top:3%;
@@ -314,7 +337,9 @@ sup{
 .set-gray{
     color:gray!important;
 }
-
+.set-white{
+    color:white!important;
+}
 .login-box{
    margin:7% 0 8% 0;
 }
@@ -325,4 +350,8 @@ sup{
 }
 .board-card-body{
     padding:0.5% 0.5% 0.5% 0.5%;
+}
+
+.hover-impact:hover{
+    color:gray;
 }

@@ -1,5 +1,7 @@
 module.exports = {
-  HOST: "localhost",
-  PORT: 27017,
+  HOST: "155.230.36.146",
+  PORT: 3615,
   DB: "yaknawa_db",
 };
+//DB를 직접 연결하는 포트는 3615로 설정, 요거는 안건드려도됨
+//DB에 값을 요청하는 포트는 3614로 설정.

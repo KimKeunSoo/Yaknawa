@@ -3,6 +3,7 @@ import Header from '../component/Header/Header';
 import Footer from '../component/Footer/Footer';
 import CommentRead from '../component/Body/Comment_read';
 import CommentWrite from '../component/Body/Comment_write';
+import setTitle from '../services/set-title';
 import { Link } from 'react-router-dom';
 
 
@@ -17,6 +18,7 @@ const NoticeRead = (props) => {
     const date = "게시일";
     const thumb = '좋아요 수';
     const comment = '댓글 수';
+    setTitle(`${theme} > ${title}`);
     return (
         <div>
             <Header />

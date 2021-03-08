@@ -2,8 +2,10 @@ import React, { useState, useRef } from "react";
 import Header from '../component/Header/Header';
 import Footer from '../component/Footer/Footer';
 import '../style/css/style.css';
+import setTitle from '../services/set-title';
 
 const Home = (props)=>{
+    setTitle("커뮤니티 이용안내");
     return(
         <div>
             <Header/>

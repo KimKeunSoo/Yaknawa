@@ -11,8 +11,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { Link } from 'react-router-dom';
 import '../style/css/style.css';
+import setTitle from '../services/set-title';
 
 const Modify = (props) => {
+    setTitle("정보수정");
     const form = useRef();
     const [nickname, setNickname] = useState("");
     const [email, setEmail] = useState("");

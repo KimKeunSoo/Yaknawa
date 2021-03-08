@@ -6,12 +6,13 @@ import Form from "react-validation/build/form";
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
+import setTitle from '../services/set-title';
 import '../style/css/style.css';
 
-const Askbc = (props) => {
-    const form = useRef();
 
+const Askbc = (props) => {
+    setTitle("문의하기");
+    const form = useRef();
     const [company, setCompany] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");

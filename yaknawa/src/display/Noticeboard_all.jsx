@@ -8,12 +8,12 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
+import setTitle from '../services/set-title';
 import '../style/css/style.css';
 
 const Noticeall = (props) => {
-
-    function createData(no, content, nickname, date) {
+    setTitle("공지사항");
+    const createData = (no, content, nickname, date) =>{
         return { no, content, nickname, date};
     }
 

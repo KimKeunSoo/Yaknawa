@@ -7,33 +7,33 @@ const Board = (props) => {
   const board = `/noticeboard/${title}`;
   return (
     <div className="board">
-      <div className="board-title text-lg underline">
+      <div className="board-title text-lg underline ">
         <strong>{title}</strong>
         <p className="text-sm position-right "><Link className="link-black link-nonunderline" to={board}>더보기+</Link></p>
       </div>
-      <div className="board-body">
-        <div className="board-item">
-          <Link  className="board-item-title link-black link-nonunderline position-left">게시글 제목</Link>
+      <div className="board-body ">
+        <div className="board-item bottom-space-sm" >
+          <Link  className="board-item-title link-black link-nonunderline ">게시글 제목</Link>
           <p className="position-right board-item-sub">좋아요/댓글 수</p>
         </div>
-        <br />
-        <div className="board-item">
-          <Link className="board-item-title link-black link-nonunderline position-left">게시글 제목</Link>
+ 
+        <div className="board-item bottom-space-sm">
+          <Link className="board-item-title link-black link-nonunderline ">게시글 제목</Link>
           <p className="position-right board-item-sub">좋아요/댓글 수</p>
         </div>
-        <br />
-        <div className="board-item">
-          <Link className="board-item-title link-black link-nonunderline position-left">게시글 제목</Link>
+
+        <div className="board-item bottom-space-sm">
+          <Link className="board-item-title link-black link-nonunderline ">게시글 제목</Link>
           <p className="position-right board-item-sub">좋아요/댓글 수</p>
         </div>
-        <br />
-        <div className="board-item">
-          <Link className="board-item-title link-black link-nonunderline position-left">게시글 제목</Link>
+  
+        <div className="board-item bottom-space-sm">
+          <Link className="board-item-title link-black link-nonunderline ">게시글 제목</Link>
           <p className="position-right board-item-sub">좋아요/댓글 수</p>
         </div>
-        <br />
-        <div className="board-item">
-          <Link className="board-item-title link-black link-nonunderline position-left">게시글 제목</Link>
+ 
+        <div className="board-item bottom-space-sm">
+          <Link className="board-item-title link-black link-nonunderline ">게시글 제목</Link>
           <p className="position-right board-item-sub">좋아요/댓글 수</p>
         </div>
         <br/>

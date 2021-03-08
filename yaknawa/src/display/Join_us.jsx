@@ -9,10 +9,12 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import setTitle from '../services/set-title';
 import { Link } from 'react-router-dom';
 import '../style/css/style.css';
 
 const JoinUs = (props) => {
+    setTitle("회원가입");
     const form = useRef();
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
@@ -48,7 +50,7 @@ const JoinUs = (props) => {
     const onChangePasscheck = (e) => {
         const passcheck = e.target.value;
         setPasscheck(passcheck);
-        if (password != passcheck) {
+        if (password !== passcheck) {
             setIssame(false);
         } else {
             setIssame(true);

@@ -1,12 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Header from '../component/Header/Header_home';
 import Footer from '../component/Footer/Footer';
 import Board from '../component/Body/Board';
 import Grid from '@material-ui/core/Grid';
 import Search from '../component/Action/Search';
+import Realtimeprice from '../component/Body/Realtime_price';
 import '../style/css/style.css';
+import setTitle from '../services/set-title';
 
 const Home = (props) => {
+    setTitle("약나와");
     const most = "인기";
     const theme1 = "비만";
     const theme2 = "영양제";
@@ -17,10 +20,10 @@ const Home = (props) => {
     return (
         <div>
             <Header/>
-            <div className="body">
-                <Search />
+            <div className="body">                
                 <Grid container spacing={5}>
                     <Grid item lg={8}>
+                    <Search />
                         <Board title={most} className="board-most-grid"/>
                         <Grid container  className="board-theme-grid">
                             <Grid item lg={6}>
@@ -40,7 +43,10 @@ const Home = (props) => {
                         </Grid>
                     </Grid>
                     <Grid item lg={4}>
-                        실시간 의약품 가격보기
+                        <div className="padding-left-lg ">
+                            <Realtimeprice/>
+                        </div>
+                        
                     </Grid>
                 </Grid>
 

@@ -14,6 +14,11 @@ import Noticeboard from './display/Noticeboard';
 import Askbc from './display/Askbc';
 import Noticewrite from './display/Noticeboard_write';
 import Noticeread from './display/Noticeboard_read';
+import ResultAll from './display/Search_all';
+import ResultPharmacy from './display/Search_pharmacy';
+import ResultPill from './display/Search_pill';
+import Pharmacy from './display/Pharmacy';
+import Apply from './display/Apply';
 class Router extends PureComponent {
     render() {
         return (
@@ -35,6 +40,14 @@ class Router extends PureComponent {
                 <Route exact path="/noticewrite" component={Noticewrite} />
                 <Route exact path="/noticeread/:theme/:num" component={Noticeread} />
                 <Route exact path="/noticeread" component={Noticeread} />
+                <Route exact path="/searchall" component={ResultAll} />
+                <Route exact path="/searchpharmacy/:name" component={ResultPharmacy} />
+                <Route exact path="/searchpharmacy" component={ResultPharmacy} />
+                <Route exact path="/searchpill/:name" component={ResultPill} />
+                <Route exact path="/searchpill" component={ResultPill} />
+                <Route exact path="/pharmacy/:name/:address" component={Pharmacy} />
+                <Route exact path="/pharmacy" component={Pharmacy} />
+                <Route exact path="/apply" component={Apply} />
             </div>
         );
     }

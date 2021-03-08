@@ -6,12 +6,14 @@ import Img from '../style/img/priceformImg.png';
 import Grid from '@material-ui/core/Grid';
 import Search from '../component/Action/Search';
 import Card from '../component/Body/Card';
+import setTitle from '../services/set-title';
 import '../style/css/style.css';
 
 const Priceform = (props) => {
     const pills = "의약품 이름";
     const low = "최저가";
     const high = "최고가";
+    setTitle("약값비교");
     return (
         <div>
             <Header/>
@@ -26,12 +28,12 @@ const Priceform = (props) => {
                     <Grid item lg={3}></Grid>
                 </Grid>
                 <br /><br /><br />
-                <div className="position-center text-md">
-                    <Link className="link-black link-nonunderline">보유중인 전체 의약품 보기</Link>
+                <div className="position-center text-md hover-impact">
+                    <Link className="link-black link-nonunderline link-cursor-pointer" to="/searchall">보유중인 전체 의약품 보기</Link>
                 </div>
                 <br />
-                <div className="position-center text-md">
-                    <Link className="link-black link-nonunderline">찾으시는 약 가격이 없나요? 신청해주세요!</Link>
+                <div className="position-center text-md hover-impact">
+                    <Link to="/apply" className="link-black link-nonunderline link-cursor-pointer">찾으시는 약 가격이 없나요? 신청해주세요!</Link>
                 </div>
                 <br /><br /><br />
                 <Grid container>
