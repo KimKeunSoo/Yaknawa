@@ -1,36 +1,47 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Header from "../component/Header/Header";
 import Footer from "../component/Footer/Footer";
-import Grid from "@material-ui/core/Grid";
-import Form from "react-validation/build/form";
-import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import { Grid, Button, ButtonGroup, Input } from "@material-ui/core";
 import setTitle from "../services/set-title";
-
+import { loginUser } from "../_actions/user_action";
+import { useDispatch } from "react-redux";
+import { Modal, ModalContent } from "react-native-modals";
 import "../style/css/style.css";
 
 const Login = (props) => {
   setTitle("로그인");
-  const form = useRef();
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
-  const onChangeId = (e) => {
-    const id = e.target.value;
-    setId(id);
+  const dispatch = useDispatch();
+
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
+
+  const onUsernameHandler = (e) => {
+    setUsername(e.currentTarget.value);
   };
-  const onChangePassword = (e) => {
-    const password = e.target.value;
-    setPassword(password);
+  const onPasswordHandler = (e) => {
+    setPassword(e.currentTarget.value);
   };
 
-  const clickLogin = () => {
-    setRole("user");
-    //세션설정
-    window.sessionStorage.setItem("role", role);
-    console.log(window.sessionStorage);
-    window.location.replace("/");
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
+    let body = {
+      username: Username,
+      password: Password,
+    };
+
+    dispatch(loginUser(body))
+      .then((res) => {
+        if (res.payload.loginSuccess) {
+          alert("로그인 완료.");
+          props.history.push("/");
+        } else {
+          alert(res.payload.message);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -41,43 +52,41 @@ const Login = (props) => {
           <strong>로그인</strong>
         </div>
         <div className="upperline share-body left-space-lg right-space-lg ">
-          <Form ref={form} className="login-box">
+          <form onSubmit={onSubmitHandler} className="login-box">
             <Grid container>
               <Grid item lg={4}></Grid>
               <Grid item lg={4}>
-                <TextField
+                <Input
                   id="margin-none"
+                  type="username"
                   className="size-full postion-center"
-                  name="id"
                   placeholder="ID를 입력해주세요"
                   variant="outlined"
-                  value={id}
-                  onChange={onChangeId}
+                  value={Username}
+                  onChange={onUsernameHandler}
                   autoFocus
                 />
                 <br />
                 <br />
-                <TextField
+                <Input
                   id="margin-none"
                   type="password"
                   className="size-full postion-center"
                   placeholder="PassWord를 입력해주세요"
-                  name="password"
                   variant="outlined"
-                  onChange={onChangePassword}
-                  value={password}
+                  value={Password}
+                  onChange={onPasswordHandler}
                 />
                 <br />
                 <br />
-                <div className="position-right">
-                  <Link className="link-nonunderline link-gray text-sm">
-                    아이디 찾기
-                  </Link>
-                  &nbsp;|&nbsp;{" "}
-                  <Link className="link-nonunderline link-gray text-sm">
-                    비밀번호 찾기
-                  </Link>
-                </div>
+                <ButtonGroup
+                  variant="text"
+                  color="primary"
+                  aria-label="text primary button group"
+                >
+                  <Button>아이디 찾기</Button>
+                  <Button>비밀번호 찾기</Button>
+                </ButtonGroup>
                 <br />
                 <br />
 
@@ -85,14 +94,14 @@ const Login = (props) => {
                   variant="contained"
                   color="primary"
                   className=" position-center size-full"
-                  onClick={clickLogin}
+                  type="submit"
                 >
                   로그인
                 </Button>
               </Grid>
               <Grid item lg={4}></Grid>
             </Grid>
-          </Form>
+          </form>
         </div>
       </div>
 

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { authUser } from "../_actions/user_action";
 
-export default function (Componet, option, adminRoute = null) {
+export default function (Component, option, adminRoute = null) {
   //option
   // null => 아무나 출입가능
   // true => 로그인한 유저만 출입 가능
@@ -37,7 +37,7 @@ export default function (Componet, option, adminRoute = null) {
       });
     }, []);
 
-    return <Componet />;
+    return <Component />;
   }
 
   return AuthCheck;

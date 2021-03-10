@@ -1,5 +1,5 @@
 import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, AUTH_USER } from "./types";
-import { request } from "../utils/axios";
+import { request } from "../_utils/axios";
 
 const USER_URL = "/api/user";
 

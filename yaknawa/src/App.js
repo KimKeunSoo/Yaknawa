@@ -19,19 +19,20 @@ import ResultPharmacy from "./display/Search_pharmacy";
 import ResultPill from "./display/Search_pill";
 import Pharmacy from "./display/Pharmacy";
 import Apply from "./display/Apply";
+import Auth from "./_hoc/auth";
 function App() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Auth(Home, null)} />
           <Route exact path="/htu" component={Htu} />
           <Route exact path="/dop" component={Dop} />
           <Route exact path="/tos" component={Tos} />
           <Route exact path="/priceform" component={Priceform} />
           <Route exact path="/share" component={Share} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/joinus" component={JoinUs} />
+          <Route exact path="/login" component={Auth(Login, false)} />
+          <Route exact path="/joinus" component={Auth(JoinUs, false)} />
           <Route exact path="/modify" component={Modify} />
           <Route exact path="/noticeall" component={Noticeall} />
           <Route path="/noticeboard/:theme" component={Noticeboard} />
