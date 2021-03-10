@@ -3,7 +3,7 @@ const User = db.user;
 /* 
     GET /api/user/list
 */
-
+//사용자 목록 가져오기
 exports.list = (req, res) => {
   // admin이 아닐시 거절
   if (!req.decoded.admin) {
@@ -12,7 +12,7 @@ exports.list = (req, res) => {
     });
   }
 
-  User.find({}, "-password") //사용자 목록 가져오기
+  User.find({}, "-password") //사용자 비밀번호 제외 가져오기
     .exec()
     .then((users) => {
       res.json({ users });
@@ -22,6 +22,7 @@ exports.list = (req, res) => {
 /*
     POST /api/user/assign-admin/:username
 */
+//해당 사용자 관리자 권한 주기
 exports.assignAdmin = (req, res) => {
   // admin이 아닐시 거절
   if (!req.decoded.admin) {

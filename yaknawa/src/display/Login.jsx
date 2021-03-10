@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Header from "../component/Header/Header";
 import Footer from "../component/Footer/Footer";
+import { Redirect } from "react-router-dom";
 import { Grid, Button, ButtonGroup, Input } from "@material-ui/core";
 import setTitle from "../services/set-title";
-import { loginUser } from "../_actions/user_action";
-import { useDispatch } from "react-redux";
-import { Modal, ModalContent } from "react-native-modals";
+import { login } from "../_actions/auth";
+import { useDispatch, useSelector } from "react-redux";
 import "../style/css/style.css";
 
 const Login = (props) => {
   setTitle("로그인");
-  const dispatch = useDispatch();
 
-  const [Username, setUsername] = useState("");
-  const [Password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { message } = useSelector((state) => state.message);
+
+  const dispatch = useDispatch();
 
   const onUsernameHandler = (e) => {
     setUsername(e.currentTarget.value);
@@ -22,27 +27,23 @@ const Login = (props) => {
     setPassword(e.currentTarget.value);
   };
 
-  const onSubmitHandler = (e) => {
+  const onLoginHandler = (e) => {
     e.preventDefault();
 
-    let body = {
-      username: Username,
-      password: Password,
-    };
+    setLoading(true);
 
-    dispatch(loginUser(body))
-      .then((res) => {
-        if (res.payload.loginSuccess) {
-          alert("로그인 완료.");
-          props.history.push("/");
-        } else {
-          alert(res.payload.message);
-        }
+    dispatch(login(username, password))
+      .then(() => {
+        props.history.push("/");
+        window.location.reload();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        setLoading(false);
       });
   };
+  if (isLoggedIn) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div>
@@ -52,7 +53,7 @@ const Login = (props) => {
           <strong>로그인</strong>
         </div>
         <div className="upperline share-body left-space-lg right-space-lg ">
-          <form onSubmit={onSubmitHandler} className="login-box">
+          <form onSubmit={onLoginHandler} className="login-box">
             <Grid container>
               <Grid item lg={4}></Grid>
               <Grid item lg={4}>
@@ -62,7 +63,7 @@ const Login = (props) => {
                   className="size-full postion-center"
                   placeholder="ID를 입력해주세요"
                   variant="outlined"
-                  value={Username}
+                  value={username}
                   onChange={onUsernameHandler}
                   autoFocus
                 />
@@ -74,7 +75,7 @@ const Login = (props) => {
                   className="size-full postion-center"
                   placeholder="PassWord를 입력해주세요"
                   variant="outlined"
-                  value={Password}
+                  value={password}
                   onChange={onPasswordHandler}
                 />
                 <br />

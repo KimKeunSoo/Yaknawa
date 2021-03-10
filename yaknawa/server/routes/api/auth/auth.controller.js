@@ -5,7 +5,9 @@ const User = db.user;
     POST /api/auth/register
     {
         username,
-        password
+        password,
+        .
+        .
     }
 */
 // 회원가입
@@ -57,7 +59,7 @@ exports.register = (req, res) => {
   // 성공 응답 전송
   const respond = (isAdmin) => {
     res.json({
-      message: "회원가입이 완료되었습니다.",
+      success: true,
       admin: isAdmin ? true : false,
     });
   };
@@ -88,7 +90,6 @@ exports.register = (req, res) => {
 //로그인
 exports.login = (req, res) => {
   const { username, password } = req.body;
-  const secret = req.app.get("jwt-secret");
 
   // 사용자 정보 확인 & jwt 토큰 생성
   const check = (user) => {
