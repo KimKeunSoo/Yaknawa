@@ -1,7 +1,7 @@
 module.exports = {
-  HOST: "155.230.36.146",
-  PORT: 3615,
-  DB: "yaknawa_db",
+  ADDRESS:
+    "mongodb+srv://gs0351:family77!@cluster0.znjqz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  DB: "yaknawa",
 };
-//DB를 직접 연결하는 포트는 3615로 설정, 요거는 안건드려도됨
-//DB에 값을 요청하는 포트는 3614로 설정.
+//ADDRESS : mongoDB atlas로 연결하는 KS's 계정과 비밀번호, url
+//DB : 사용하려는 DB 이름
