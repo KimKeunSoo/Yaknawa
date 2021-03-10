@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const pharmacySchema = new Schema(
+const pharmacySchema = new mongoose.Schema(
   {
     // 1. 약국 이름
     pharmacyName: {
