@@ -67,7 +67,7 @@ const SearchResult = (props) => {
                                 <InputLabel >지역(시)</InputLabel>
                                 <Select
                                     native
-                                    label="Age"
+                                    
                                     value={region}
                                     onChange={onChangeRegion}
                                 >   
@@ -81,7 +81,7 @@ const SearchResult = (props) => {
                                 <InputLabel>지역(구)</InputLabel>
                                 <Select
                                     native
-                                    label="Age"
+                                    
                                     value={sub}
                                     onChange={onChangeSecond}
                                     disabled = {second?false:true}
@@ -98,7 +98,7 @@ const SearchResult = (props) => {
                                 <InputLabel >약 종류</InputLabel>
                                 <Select
                                     native
-                                    label="Age"
+                                    
                                     disabled
                                     value={type}
                                     disabled = {third?false:true}
@@ -132,7 +132,7 @@ const SearchResult = (props) => {
                 </div>
                 <div className="upperline left-space-lg right-space-lg">
                     <TableContainer >
-                        <Table aria-label="simple table">
+                        <Table>
                             <TableHead>
                                 <TableRow>
                                     <TableCell align="center">약국</TableCell>

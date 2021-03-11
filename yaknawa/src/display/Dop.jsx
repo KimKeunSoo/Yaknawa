@@ -4,7 +4,7 @@ import Footer from '../component/Footer/Footer';
 import setTitle from '../services/set-title';
 import '../style/css/style.css';
 
-const Home = (props)=>{
+const Dop = (props)=>{
     setTitle("개인정보처리방침");
     return(
         <div>
@@ -15,4 +15,4 @@ const Home = (props)=>{
     );
 }
 
-export default Home;
+export default Dop;

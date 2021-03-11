@@ -255,7 +255,7 @@ const JoinUs = (props) => {
                             </div>
                             <br /><br />
                             <div className="position-center">
-                                <Button variant="contained" color="primary" className="position-center" onClick={submit}>
+                                <Button variant="contained" color="primary" className="share-btn set-white position-center" onClick={submit}>
                                     회원가입
                                 </Button>
                             </div>

@@ -45,6 +45,10 @@ sup{
     margin-top:3%;
     padding:3% 3% 3% 3%;
 }
+.boardpage-body{
+    margin-top:1.5%;
+    padding:3% 3% 3% 3%;
+}
 .htu, .dop, .tos{
     margin-left:3%;
     margin-right:3%;
@@ -135,7 +139,9 @@ sup{
 .outline-all{   
     border: #e6e6e6 3px solid;
 }
-
+.background-set-gray{
+    background-color: #e6e6e6;
+}
 .share-btn{
     background-color: green!important;
     margin-bottom:3%!important;
@@ -170,6 +176,15 @@ sup{
     border: none; 
     background: transparent;
     width:100%;
+}
+.tn-noborder-transparent:visited{
+    outline: none;
+}
+.tn-noborder-transparent:hover{
+    outline: none;
+}
+.tn-noborder-transparent:active{
+    outline: none;
 }
 
 .btn-noborder-transparent:hover{
@@ -337,11 +352,14 @@ sup{
 .set-gray{
     color:gray!important;
 }
+.set-green{
+    color:green!important;
+}
 .set-white{
     color:white!important;
 }
 .login-box{
-   margin:7% 0 8% 0;
+   margin:0 0 8% 0;
 }
 
 .radio-item-form{
@@ -354,4 +372,9 @@ sup{
 
 .hover-impact:hover{
     color:gray;
+}
+
+.default-page{
+    height:100px;
+    padding:25% 25% 25% 25%;
 }

@@ -46,7 +46,11 @@ const Home = (props) => {
                         <div className="padding-left-lg ">
                             <Realtimeprice/>
                         </div>
-                        
+                        <div className="padding-left-lg top-space-lg">
+                            <div className=" background-set-gray ">
+                                광고배너
+                            </div>
+                        </div>
                     </Grid>
                 </Grid>
 

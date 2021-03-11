@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import '../../style/css/style.css';
 
 const CommentWrite = (props) => {
@@ -11,13 +12,21 @@ const CommentWrite = (props) => {
                     className="textarea-resizenone size-full textarea-size-md  textarea-onfocus">
                 </textarea>
             </div>
-            <Button variant="contained" color="primary" className="right-space-lg ">
+            <Grid container spacing={2}>
+                <Grid item lg={10}></Grid>
+                <Grid item lg={1}>
+                <Button variant="contained" color="primary" className="size-full share-btn set-white">
                     등록
-                </Button>
-               &nbsp;
-                <Button variant="contained" color="second" className=" left-space-lg ">
-                                    취소
-                                </Button>
+                </Button>        
+               
+                </Grid>
+                <Grid item lg={1}> <Button variant="contained" color="second" className="size-full">
+                    취소
+                                </Button></Grid>
+            </Grid>
+              
+            
+
         </div>
 
     );

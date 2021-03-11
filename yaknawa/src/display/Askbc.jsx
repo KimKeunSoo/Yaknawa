@@ -92,7 +92,7 @@ const Askbc = (props) => {
                     </Grid>
                     <br /><br />
                     <div className="position-center">
-                        <Button variant="contained" color="primary" className="position-center size-quarter" onClick={submit}>
+                        <Button variant="contained" color="primary" className="share-btn set-white position-center size-quarter" onClick={submit}>
                             전송하기
                                 </Button>
                     </div>

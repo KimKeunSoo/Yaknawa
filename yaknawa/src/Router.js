@@ -19,6 +19,8 @@ import ResultPharmacy from './display/Search_pharmacy';
 import ResultPill from './display/Search_pill';
 import Pharmacy from './display/Pharmacy';
 import Apply from './display/Apply';
+import MPay from './display/Medical_pay';
+import Admin from './display/Admin';
 class Router extends PureComponent {
     render() {
         return (
@@ -48,6 +50,8 @@ class Router extends PureComponent {
                 <Route exact path="/pharmacy/:name/:address" component={Pharmacy} />
                 <Route exact path="/pharmacy" component={Pharmacy} />
                 <Route exact path="/apply" component={Apply} />
+                <Route exact path="/mpay" component={MPay} />
+                <Route exact path="/admin" component={Admin} />
             </div>
         );
     }

@@ -6,8 +6,16 @@ import Boardcard from '../component/Body/Board_card';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import setTitle from '../services/set-title';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+
+// Import Swiper styles
+import 'swiper/swiper.scss';
+
 
 import '../style/css/style.css';
+
+
 
 const Noticeboard = (props) => {
     const form = useRef();
@@ -23,33 +31,44 @@ const Noticeboard = (props) => {
         const link = `/noticewrite/${theme}`;
         props.history.push(link);
     }
-    const themeList = ["여드름","탈모","비만","영양제","피임","발기부전"];
-    const slide=[];
-    for(let i=0;i<themeList.length;i++){
+    const themeList = ["여드름", "탈모", "비만", "영양제", "피임", "발기부전"];
+    const slide = [];
+    
+    themeList.map((item) => {
         slide.push(
-            <Grid item lg={2} className={theme === `${themeList[i]}`?"underline-impact padding-bottom-sm":"underline padding-bottom-sm"} >
-            <Link to = {`/noticeboard/${themeList[i]}`} className="position-center link-black link-nonunderline text-md">{themeList[i]}</Link>
-        </Grid>
+            <SwiperSlide className={theme === `${item}` ? "underline-impact padding-top-sm padding-bottom-sm" : "underline padding-top-sm padding-bottom-sm"} >
+                <Link to={`/noticeboard/${item}`} className="position-center link-black link-nonunderline text-md">{item}</Link>
+            </SwiperSlide>
         );
-    }
+    })
+
 
     return (
         <div>
             <Header />
             <div className="body">
                 <div className=" padding-bottom-sm position-center bottom-space-sm">
-                    <Grid container>
-                        {slide}
-                    </Grid>
-
+                    <Swiper
+                        spaceBetween={0}
+                        slidesPerView={6}                                         
+                    >                     
+                     {theme !== "인기" ? slide : ""}
+                        </Swiper>
                 </div>
-                <div className="padding-left-lg text-lg"><strong>{theme} 게시판</strong></div>
-                <div className="position-right text-sm padding-right-lg">
-                    <Button variant="contained" color="primary" className="share-btn" onClick={themeLink}>
-                        글쓰기
+                <Grid container>
+                    <Grid item lg={1}></Grid>
+                    <Grid item lg={9}>
+                        <div className=" text-lg"><strong>{theme} 게시판</strong></div>
+                    </Grid>
+                    <Grid item lg={2}>
+                        <div className="text-sm padding-right-lg">
+                            <Button variant="contained" color="primary" className="share-btn" onClick={themeLink}>
+                                글쓰기
                 </Button></div>
+                    </Grid>
+                </Grid>
 
-                <div className="upperline share-body left-space-lg right-space-lg ">
+                <div className="upperline boardpage-body left-space-lg right-space-lg ">
 
                     <Grid container className="top-space-xs" >
                         <Grid item lg={6} className="board-card-body">

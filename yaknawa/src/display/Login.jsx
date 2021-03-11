@@ -38,8 +38,8 @@ const Login = (props) => {
         <div>
             <Header/>
             <div className="body">
-                <div className="position-center text-lg"><strong>로그인</strong></div>
-                <div className="upperline share-body left-space-lg right-space-lg ">
+                <div className="padding-top-lg position-center text-lg "><strong>로그인</strong></div>
+                <div className=" share-body left-space-lg right-space-lg ">
                     <Form ref={form} className="login-box">
                         <Grid container>
                             <Grid item lg={4}></Grid>
@@ -72,7 +72,7 @@ const Login = (props) => {
                                 </div>
                                 <br/><br/>
                             
-                                <Button variant="contained" color="primary" className=" position-center size-full" onClick={clickLogin}>
+                                <Button variant="contained" color="primary" className="share-btn set-white position-center size-full" onClick={clickLogin}>
                             로그인
                                 </Button>
                             </Grid>

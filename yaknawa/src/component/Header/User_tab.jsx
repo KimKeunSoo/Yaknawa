@@ -25,8 +25,8 @@ const User_tab = (props) => {
     }
     return (
         <Grid container spacing={2}>
-            <Grid item lg={9}></Grid>
-            <Grid item lg={3}>
+            <Grid item lg={8}></Grid>
+            <Grid item lg={4}>
                 <div className="position-right size-half-quarter">
                     <ul className="ul-horizon text-sm">
                         <li className="li-horizon li-space-sm">

@@ -1,24 +1,79 @@
 const express = require("express");
 const axios = require("axios");
 const app = express();
+const key = "2zQAcm2%2BVmtroO3itoBrWenseAnOsgAogptiahQoummZ3oqZB7cf9bF9MeRQ%2FgQFTtZBlKBef%2FYCV4ny6IWCyg%3D%3D";
 
-const currentPut = async () => {
+const currentPut = async (region, npayKorNm) => {  
+  const numOfRows = 5;  
+  var pageNo = 1;
   let response;
-  try {
-    response = await axios.get(
-      "http://apis.data.go.kr/B551182/nonPaymentDamtInfoService/getNonPaymentItemCodeList2?pageNo=1&numOfRows=10&ServiceKey=13%2Fi%2FswRnU0uXKofAMZROl5DssosxilqkLdDlmcJxYJ264VmNxzUs3LpT7C6mClEI%2FKx8ntQ95kUk%2BMJuSD80g%3D%3D");
-  } catch (e) {
-    console.log(e);
+  const list = [];
+  for (pageNo; ; pageNo++) {
+    //console.log(`cycle${pageNo}`);
+    try {
+      response = await axios.get(
+        `http://apis.data.go.kr/B551182/nonPaymentDamtInfoService/getNonPaymentItemHospList2?ServiceKey=${key}&pageNo=${pageNo}&numOfRows=${numOfRows}&sgguCd=${region}&searchWrd=${encodeURIComponent(npayKorNm)}`);
+     
+
+     //console.log(list);
+      } catch (e) {
+      console.log("no data");
+      return e;
+    }
+    console.log(response.data.response.body.items);
+    if(response.data.response.body.items){
+      response.data.response.body.items.item.map((data)=>{
+        list.push({
+          adtEndDd:data.adtEndDd,
+          adtFrDd:data.adtFrDd,
+          minPrc: data.minPrc,
+          maxPrc: data.maxPrc,
+          yadmNm: data.yadmNm,
+          clCdNm: data.clCdNm
+        })
+      })
+    }else{
+      break;
+    }
   }
-  return response;
+  /**  let i = 0;
+    while (response.data.response.body.items.item[i]) {
+      try {
+        var item = {
+         
+        };
+        //console.log(item);
+        list.push(item);
+        //console.log(list);
+        i++
+      } catch {
+        break;
+      }
+    } }*/
+
+    
+
+
+  //console.log(list);
+  return list;
 };
 
-app.get("/", (req, res) => {
-  currentPut().then((response) => {
+app.get("/select/:region/:main/:sub", (req, res) => {
+  const region = req.params.region;
+  const main = req.params.main;
+  const sub = req.params.sub;
+  const npayKorNm = `${main}/${sub}`;
+  //console.log(region, main, sub);
+  //console.log(npayKorNm);
+  currentPut(region, npayKorNm).then((response) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.json(response.data.response.body);
-  });
-}); //node서버에서 프론트서버로 데이터를 보내기 위한 코드
+    //console.log("data"+response);
+    console.log(response);
+    res.json(response);
+  }).catch(err => {
+    console.log('withoutTryCatch - 실패결과', err.message)
+  })
+});
 
 app.listen(4000, () => {
   console.log("서버가 연결되었습니다.");
