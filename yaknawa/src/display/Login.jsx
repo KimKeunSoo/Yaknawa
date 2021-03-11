@@ -1,13 +1,11 @@
 import React, { useState, useRef } from "react";
 import Header from "../component/Header/Header";
 import Footer from "../component/Footer/Footer";
-import Grid from "@material-ui/core/Grid";
-import Form from "react-validation/build/form";
-import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import { Redirect } from "react-router-dom";
+import { Grid, Button, ButtonGroup, Input } from "@material-ui/core";
 import setTitle from "../services/set-title";
-
+import { login } from "../_actions/auth";
+import { useDispatch, useSelector } from "react-redux";
 import "../style/css/style.css";
 
 const Login = (props) => {
