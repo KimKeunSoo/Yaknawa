@@ -19,6 +19,7 @@ import ResultPharmacy from "./display/Search_pharmacy";
 import ResultPill from "./display/Search_pill";
 import Pharmacy from "./display/Pharmacy";
 import Apply from "./display/Apply";
+import Auth from "./_hoc/auth";
 function App() {
   return (
     <Router>

@@ -1,8 +1,13 @@
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+
 const db = {};
 
-db.user = require("./user.model");
-db.share = require("./share.model");
-db.pharmacy = require("./pharmacy.model");
-db.board = require("./board.model");
+db.mongoose = mongoose;
+
+db.user = require("./users");
+db.share = require("./shares");
+db.pharmacy = require("./pharmacy");
+db.board = require("./board");
 
 module.exports = db;
