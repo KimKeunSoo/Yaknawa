@@ -10,26 +10,40 @@ import "../style/css/style.css";
 
 const Login = (props) => {
     setTitle("로그인");
-    const form = useRef();
-    const [id, setId] = useState("");
+
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState("");
-    const onChangeId = (e) => {
-        const id = e.target.value;
-        setId(id);
+    const [loading, setLoading] = useState(false);
+
+    const { isLoggedIn } = useSelector((state) => state.auth);
+    const { message } = useSelector((state) => state.message);
+
+    const dispatch = useDispatch();
+
+    const onUsernameHandler = (e) => {
+        setUsername(e.currentTarget.value);
     };
-    const onChangePassword = (e) => {
-        const password = e.target.value;
-        setPassword(password);
+    const onPasswordHandler = (e) => {
+        setPassword(e.currentTarget.value);
     };
 
-    const clickLogin = () => {
-        setRole("user");
-        //세션설정
-        window.sessionStorage.setItem("role", role);
-        console.log(window.sessionStorage);
-        window.location.replace("/");
+    const onLoginHandler = (e) => {
+        e.preventDefault();
+
+        setLoading(true);
+
+        dispatch(login(username, password))
+            .then(() => {
+                props.history.push("/");
+                window.location.reload();
+            })
+            .catch(() => {
+                setLoading(false);
+            });
     };
+    if (isLoggedIn) {
+        return <Redirect to="/" />;
+    }
 
     return (
         <div>
@@ -39,43 +53,41 @@ const Login = (props) => {
                     <strong>로그인</strong>
                 </div>
                 <div className="share-body left-space-lg right-space-lg ">
-                    <Form ref={form} className="login-box">
+                    <form onSubmit={onLoginHandler} className="login-box">
                         <Grid container>
                             <Grid item lg={4}></Grid>
                             <Grid item lg={4}>
-                                <TextField
+                                <Input
                                     id="margin-none"
+                                    type="username"
                                     className="size-full postion-center"
-                                    name="id"
                                     placeholder="ID를 입력해주세요"
                                     variant="outlined"
-                                    value={id}
-                                    onChange={onChangeId}
+                                    value={username}
+                                    onChange={onUsernameHandler}
                                     autoFocus
                                 />
                                 <br />
                                 <br />
-                                <TextField
+                                <Input
                                     id="margin-none"
                                     type="password"
                                     className="size-full postion-center"
                                     placeholder="PassWord를 입력해주세요"
-                                    name="password"
                                     variant="outlined"
-                                    onChange={onChangePassword}
                                     value={password}
+                                    onChange={onPasswordHandler}
                                 />
                                 <br />
                                 <br />
-                                <div className="position-right">
-                                    <Link className="link-nonunderline link-gray text-sm">
-                                        아이디 찾기
-                  </Link>
-                  &nbsp;|&nbsp;{" "}
-                                    <Link className="link-nonunderline link-gray text-sm">
-                                        비밀번호 찾기
-                  </Link>
-                                </div>
+                                <ButtonGroup
+                                    variant="text"
+                                    color="primary"
+                                    aria-label="text primary button group"
+                                >
+                                    <Button>아이디 찾기</Button>
+                                    <Button>비밀번호 찾기</Button>
+                                </ButtonGroup>
                                 <br />
                                 <br />
 
@@ -83,14 +95,14 @@ const Login = (props) => {
                                     variant="contained"
                                     color="primary"
                                     className=" position-center size-full"
-                                    onClick={clickLogin}
+                                    type="submit"
                                 >
                                     로그인
                 </Button>
                             </Grid>
                             <Grid item lg={4}></Grid>
                         </Grid>
-                    </Form>
+                    </form>
                 </div>
             </div>
 
