@@ -1,4 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+/src/actions
+/src/reducers
+/src/services
+/src/sotre
+index2.js
+store.js
 
 # dependencies
 /node_modules

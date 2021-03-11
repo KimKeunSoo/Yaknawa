@@ -29,6 +29,8 @@
 - sweetalert2, bootstrap
 - axios // promise api 를 활용하는 http 비동기 통신
 - react-validation validator // 유효한 email인지 확인
+- redux redux-thunk redux-devtools-extension // redux 사용
+- 
 
 1. 다운
 2. `npm install`
