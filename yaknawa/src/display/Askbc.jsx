@@ -1,6 +1,4 @@
-import React, { useState,useRef } from "react";
-import Header from '../component/Header/Header';
-import Footer from '../component/Footer/Footer';
+import React, { useState, useRef } from "react";
 import Grid from '@material-ui/core/Grid';
 import Form from "react-validation/build/form";
 import { Link } from 'react-router-dom';
@@ -39,12 +37,11 @@ const Askbc = (props) => {
         alert(company + name + email + content);
     }
     return (
-        <div>
-            <Header/>
-            <div className="body">
-                <div className="position-center text-lg"><strong>문의하기</strong></div>
-                <div className="upperline share-body left-space-lg right-space-lg">
-                <Form ref={form}>                           
+
+        <div className="body">
+            <div className="position-center text-lg"><strong>문의하기</strong></div>
+            <div className="upperline share-body left-space-lg right-space-lg">
+                <Form ref={form}>
                     <Grid container>
                         <Grid item lg={4}></Grid>
                         <Grid item lg={4}>
@@ -96,13 +93,11 @@ const Askbc = (props) => {
                             전송하기
                                 </Button>
                     </div>
-                    </Form>
-                </div>
-                
+                </Form>
             </div>
 
-            <Footer />
         </div>
+
 
     );
 }

@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import Header from '../component/Header/Header';
-import Footer from '../component/Footer/Footer';
 import Grid from '@material-ui/core/Grid';
 import Boardcard from '../component/Body/Board_card';
 import Button from '@material-ui/core/Button';
@@ -33,7 +31,7 @@ const Noticeboard = (props) => {
     }
     const themeList = ["여드름", "탈모", "비만", "영양제", "피임", "발기부전"];
     const slide = [];
-    
+
     themeList.map((item) => {
         slide.push(
             <SwiperSlide className={theme === `${item}` ? "underline-impact padding-top-sm padding-bottom-sm" : "underline padding-top-sm padding-bottom-sm"} >
@@ -44,51 +42,49 @@ const Noticeboard = (props) => {
 
 
     return (
-        <div>
-            <Header />
-            <div className="body">
-                <div className=" padding-bottom-sm position-center bottom-space-sm">
-                    <Swiper
-                        spaceBetween={0}
-                        slidesPerView={6}                                         
-                    >                     
-                     {theme !== "인기" ? slide : ""}
-                        </Swiper>
-                </div>
-                <Grid container>
-                    <Grid item lg={1}></Grid>
-                    <Grid item lg={9}>
-                        <div className=" text-lg"><strong>{theme} 게시판</strong></div>
-                    </Grid>
-                    <Grid item lg={2}>
-                        <div className="text-sm padding-right-lg">
-                            <Button variant="contained" color="primary" className="share-btn" onClick={themeLink}>
-                                글쓰기
+
+        <div className="body">
+            <div className=" padding-bottom-sm position-center bottom-space-sm">
+                <Swiper
+                    spaceBetween={0}
+                    slidesPerView={6}
+                >
+                    {theme !== "인기" ? slide : ""}
+                </Swiper>
+            </div>
+            <Grid container>
+                <Grid item lg={1}></Grid>
+                <Grid item lg={9}>
+                    <div className=" text-lg"><strong>{theme} 게시판</strong></div>
+                </Grid>
+                <Grid item lg={2}>
+                    <div className="text-sm padding-right-lg">
+                        <Button variant="contained" color="primary" className="share-btn" onClick={themeLink}>
+                            글쓰기
                 </Button></div>
+                </Grid>
+            </Grid>
+
+            <div className="upperline boardpage-body left-space-lg right-space-lg ">
+
+                <Grid container className="top-space-xs" >
+                    <Grid item lg={6} className="board-card-body">
+                        <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                        <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                        <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                        <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                    </Grid>
+                    <Grid item lg={6} className="board-card-body">
+                        <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                        <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                        <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
+                        <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
                     </Grid>
                 </Grid>
-
-                <div className="upperline boardpage-body left-space-lg right-space-lg ">
-
-                    <Grid container className="top-space-xs" >
-                        <Grid item lg={6} className="board-card-body">
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
-                        </Grid>
-                        <Grid item lg={6} className="board-card-body">
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
-                            <Boardcard title={title} uptime={uptime} content={content} thumb={thumb} click={click} theme={theme} />
-                        </Grid>
-                    </Grid>
-                </div>
             </div>
-
-            <Footer />
         </div>
+
+
 
     );
 }

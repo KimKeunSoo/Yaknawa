@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from '../component/Header/Header';
-import Footer from '../component/Footer/Footer';
 import setTitle from '../services/set-title';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
@@ -61,7 +59,11 @@ const MPay = (props) => {
         setSub(e.target.value);
     }
     const createData = (yadmNm, clCdNm, minPrc, maxPrc, adtFrDd, adtEndDd) => {
-        return { yadmNm, clCdNm, minPrc, maxPrc, adtFrDd, adtEndDd };
+        const frd = new String(adtFrDd);
+        const end = new String(adtEndDd);
+        return {
+            yadmNm, clCdNm, minPrc, maxPrc, adtFrDd: `${frd.substring(0, 4)}.${frd.substring(4, 6)}.${frd.substring(6, 8)}`, adtEndDd: `${end.substring(0, 4)}.${end.substring(4, 6)}.${end.substring(6, 8)}`
+        };
     }
 
 
@@ -75,15 +77,15 @@ const MPay = (props) => {
         if (sub) {
             axios.get(`http://localhost:4000/select/${regionCode}/${main}/${sub}`).then((response) => {
                 var data = response.data;
-                if(data){
+                if (data) {
                     data.sort(function (a, b) {
                         return a.minPrc - b.minPrc;
                     });
-                    data.map((item)=>{
+                    data.map((item) => {
                         rows.push(
                             createData(item.yadmNm, item.clCdNm, item.minPrc, item.maxPrc, item.adtFrDd, item.adtEndDd)
-                            );
-                    })                       
+                        );
+                    })
                     setResultPage(
                         <div className="left-space-xs right-space-xs">
                             <Grid container className="underline padding-bottom-sm">
@@ -99,8 +101,8 @@ const MPay = (props) => {
                                             <TableCell align="center">병원분류</TableCell>
                                             <TableCell align="center">최소가격(원)</TableCell>
                                             <TableCell align="center">최대가격(원)</TableCell>
-                                            <TableCell align="center">개시일(yyyymmdd)</TableCell>
-                                            <TableCell align="center">종료일(yyyymmdd)</TableCell>
+                                            <TableCell align="center">개시일</TableCell>
+                                            <TableCell align="center">종료일</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -118,12 +120,12 @@ const MPay = (props) => {
                                 </Table>
                             </TableContainer>
                         </div>);
-                }else{
+                } else {
                     setResultPage(
                         <div className="default-page"><p className="position-center text-xl">검색결과가 없습니다</p></div>
                     );
                 }
-              
+
             });
 
         } else {
@@ -135,66 +137,63 @@ const MPay = (props) => {
 
 
     return (
-        <div>
-            <Header />
-            <div className="body">
-                <div className="text-lg padding-left-lg"><strong>병원별 진료비</strong></div>
-                <Grid container spacing={2} className="padding-left-lg padding-right-lg top-space-lg padding-top-lg">
-                    <Grid item lg={2}>
-                        <FormControl variant="outlined" className="size-full">
-                            <InputLabel >지역(구)</InputLabel>
-                            <Select
-                                native
-                                value={region}
-                                onChange={onChangeRegion}
-                            >
-                                <option aria-label="None" value="" />
-                                {district.map((row) => (
-                                    <option value={row}>{row.split("/")[1]}</option>
-                                ))}
 
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    <Grid item lg={4}>
-                        <FormControl variant="outlined" className="size-full">
-                            <InputLabel>대분류</InputLabel>
-                            <Select
-                                native
-                                value={main}
-                                onChange={onChangeSecond}
-                                disabled={second ? false : true}
-                            >
-                                <option aria-label="None" value="" />
-                                <option value={"내시경, 천자 및 생검료 "}>내시경, 천자 및 생검료</option>
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    <Grid item lg={5}>
-                        <FormControl variant="outlined" className="size-full">
-                            <InputLabel >소분류</InputLabel>
-                            <Select
-                                native
-                                disabled
-                                value={sub}
-                                disabled={third ? false : true}
-                                onChange={onChangeThird}
-                            >
-                                <option aria-label="None" value="" />
-                                <option value={"약물유도 수면상기도 내시경검사"}>약물유도 수면상기도 내시경검사</option>
+        <div className="body">
+            <div className="text-lg padding-left-lg"><strong>병원별 진료비</strong></div>
+            <Grid container spacing={2} className="padding-left-lg padding-right-lg top-space-lg padding-top-lg">
+                <Grid item lg={2}>
+                    <FormControl variant="outlined" className="size-full">
+                        <InputLabel >지역(구)</InputLabel>
+                        <Select
+                            native
+                            value={region}
+                            onChange={onChangeRegion}
+                        >
+                            <option aria-label="None" value="" />
+                            {district.map((row) => (
+                                <option value={row}>{row.split("/")[1]}</option>
+                            ))}
 
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    <Grid item lg={1}>
-                        <Button className="btn-noborder-transparent" onClick={click_search}> <FontAwesomeIcon icon={faSearch} size="3x" className="set-gray position-center" /></Button>
-                    </Grid>
+                        </Select>
+                    </FormControl>
                 </Grid>
-                <div className="upperline share-body left-space-sm right-space-sm">
-                    {resultPage}
-                </div>
+                <Grid item lg={4}>
+                    <FormControl variant="outlined" className="size-full">
+                        <InputLabel>대분류</InputLabel>
+                        <Select
+                            native
+                            value={main}
+                            onChange={onChangeSecond}
+                            disabled={second ? false : true}
+                        >
+                            <option aria-label="None" value="" />
+                            <option value={"내시경, 천자 및 생검료 "}>내시경, 천자 및 생검료</option>
+                        </Select>
+                    </FormControl>
+                </Grid>
+                <Grid item lg={5}>
+                    <FormControl variant="outlined" className="size-full">
+                        <InputLabel >소분류</InputLabel>
+                        <Select
+                            native
+                            disabled
+                            value={sub}
+                            disabled={third ? false : true}
+                            onChange={onChangeThird}
+                        >
+                            <option aria-label="None" value="" />
+                            <option value={"약물유도 수면상기도 내시경검사"}>약물유도 수면상기도 내시경검사</option>
+
+                        </Select>
+                    </FormControl>
+                </Grid>
+                <Grid item lg={1}>
+                    <Button className="btn-noborder-transparent" onClick={click_search}> <FontAwesomeIcon icon={faSearch} size="3x" className="set-gray position-center" /></Button>
+                </Grid>
+            </Grid>
+            <div className="upperline share-body left-space-sm right-space-sm">
+                {resultPage}
             </div>
-            <Footer />
         </div>
 
     );
