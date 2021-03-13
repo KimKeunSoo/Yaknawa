@@ -194,6 +194,13 @@ const MPay = (props) => {
             <div className="upperline share-body left-space-sm right-space-sm">
                 {resultPage}
             </div>
+            <Grid container className="text-sm set-gray upperline padding-top-sm">
+                <Grid item lg={10}></Grid>
+                <Grid item lg={2}>
+                    출처:건강보험심사평가원
+                </Grid>
+
+            </Grid>
         </div>
 
     );
