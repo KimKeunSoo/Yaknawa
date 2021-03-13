@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Header from './component/Header/Header';
+import Footer from './component/Footer/Footer';
 import Home from "./display/Home";
 import Htu from "./display/Htu";
 import Dop from "./display/Dop";
@@ -62,6 +64,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+
   );
 }
 

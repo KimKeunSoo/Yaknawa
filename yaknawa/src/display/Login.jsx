@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import Header from "../component/Header/Header";
-import Footer from "../component/Footer/Footer";
 import { Redirect } from "react-router-dom";
 import { Grid, Button, ButtonGroup } from "@material-ui/core";
 import setTitle from "../services/set-title";

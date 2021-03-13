@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import Header from '../component/Header/Header';
-import Footer from '../component/Footer/Footer';
 import Grid from '@material-ui/core/Grid';
 import Boardcard from '../component/Body/Board_card';
 import Button from '@material-ui/core/Button';
@@ -13,13 +11,13 @@ import '../style/css/style.css';
 
 const Admin = (props) => {
     setTitle("관리자 페이지");
-    const [theme,setTheme] = useState("회원정보");
-    const [action,setAction] = useState(Userlist);
-       
-    const changeTheme=(e)=>{
+    const [theme, setTheme] = useState("회원정보");
+    const [action, setAction] = useState(Userlist);
+
+    const changeTheme = (e) => {
         const dir = e.target.id;
         setTheme(dir);
-        switch(dir){
+        switch (dir) {
             case "회원정보":
                 setAction(Userlist);
                 break;
@@ -43,30 +41,27 @@ const Admin = (props) => {
 
 
     return (
-        <div>
-            <Header />
-            <div className="body">
-                <div className=" padding-bottom-sm position-center bottom-space-sm">
-                     <Grid container>
-                        {slide}
-                     </Grid>
-                </div>
-                <Grid container>
-                    <Grid item lg={1}></Grid>
-                    <Grid item lg={9}>
-                        <div className=" text-lg"><strong>{theme}</strong></div>
-                    </Grid>
-                    <Grid item lg={2}>
-                        
-                    </Grid>
-                </Grid>
-                <div className="upperline boardpage-body left-space-lg right-space-lg ">
-                    {action}
-                </div>
-            </div>
 
-            <Footer />
+        <div className="body">
+            <div className=" padding-bottom-sm position-center bottom-space-sm">
+                <Grid container>
+                    {slide}
+                </Grid>
+            </div>
+            <Grid container>
+                <Grid item lg={1}></Grid>
+                <Grid item lg={9}>
+                    <div className=" text-lg"><strong>{theme}</strong></div>
+                </Grid>
+                <Grid item lg={2}>
+
+                </Grid>
+            </Grid>
+            <div className="upperline boardpage-body left-space-lg right-space-lg ">
+                {action}
+            </div>
         </div>
+
 
     );
 }
