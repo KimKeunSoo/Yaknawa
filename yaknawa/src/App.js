@@ -19,8 +19,9 @@ import ResultPharmacy from "./display/Search_pharmacy";
 import ResultPill from "./display/Search_pill";
 import Pharmacy from "./display/Pharmacy";
 import Apply from "./display/Apply";
-import MPay from './display/Medical_pay';
-import Admin from './display/Admin';
+import MPay from "./display/Medical_pay";
+import Admin from "./display/Admin";
+import Profile from "./display/TestProfile";
 function App() {
   return (
     <Router>
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="/apply" component={Apply} />
           <Route exact path="/mpay" component={MPay} />
           <Route exact path="/admin" component={Admin} />
+          <Route exact path="/profile" component={Profile} />
         </Switch>
       </div>
     </Router>
