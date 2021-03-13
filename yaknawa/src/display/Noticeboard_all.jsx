@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from '../component/Header/Header';
-import Footer from '../component/Footer/Footer';
 import { Link } from 'react-router-dom';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,8 +11,8 @@ import '../style/css/style.css';
 
 const Noticeall = (props) => {
     setTitle("공지사항");
-    const createData = (no, content, nickname, date) =>{
-        return { no, content, nickname, date};
+    const createData = (no, content, nickname, date) => {
+        return { no, content, nickname, date };
     }
 
     const rows = [
@@ -30,37 +28,35 @@ const Noticeall = (props) => {
     ];
 
     return (
-        <div>
-            <Header/>
-            <div className="body">
-                <div className="position-center text-lg"><strong>공지사항</strong></div>
-                <div className="upperline share-body left-space-lg right-space-lg">
-                    <TableContainer >
-                        <Table aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell align="center">순번</TableCell>
-                                    <TableCell align="center">내용</TableCell>
-                                    <TableCell align="center">글쓴이</TableCell>
-                                    <TableCell align="center">등록일</TableCell>
+
+        <div className="body">
+            <div className="position-center text-lg"><strong>공지사항</strong></div>
+            <div className="upperline share-body left-space-lg right-space-lg">
+                <TableContainer >
+                    <Table aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell align="center">순번</TableCell>
+                                <TableCell align="center">내용</TableCell>
+                                <TableCell align="center">글쓴이</TableCell>
+                                <TableCell align="center">등록일</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows.map((row) => (
+                                <TableRow key={row.no}>
+                                    <TableCell align="center">{row.no}</TableCell>
+                                    <TableCell align="center">{row.content}</TableCell>
+                                    <TableCell align="center">{row.nickname}</TableCell>
+                                    <TableCell align="center">{row.date}</TableCell>
                                 </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {rows.map((row) => (
-                                    <TableRow key={row.no}>
-                                        <TableCell align="center">{row.no}</TableCell>
-                                        <TableCell align="center">{row.content}</TableCell>
-                                        <TableCell align="center">{row.nickname}</TableCell>
-                                        <TableCell align="center">{row.date}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                </div>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </div>
-            <Footer />
         </div>
+
 
     );
 }

@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import Header from "../component/Header/Header";
-import Footer from "../component/Footer/Footer";
 import { Redirect } from "react-router-dom";
 import { Grid, Button, ButtonGroup } from "@material-ui/core";
 import setTitle from "../services/set-title";
@@ -30,17 +28,26 @@ const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [isid, setIsid] = useState(true);
+  const [isPw, setIspw] = useState(true);
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { message } = useSelector((state) => state.message);
 
+  const findId = () => {
+    alert("아이디찾기");
+  };
+  const findPw = () => {
+    alert("비밀번호 찾기");
+  };
   const dispatch = useDispatch();
 
   const onUsernameHandler = (e) => {
     setUsername(e.currentTarget.value);
+    setIsid(true);
   };
   const onPasswordHandler = (e) => {
     setPassword(e.currentTarget.value);
+    setIspw(true);
   };
 
   const onLoginHandler = (e) => {
@@ -48,103 +55,98 @@ const Login = (props) => {
 
     setLoading(true);
 
-    form.current.validateAll();
-
-    if (checkBtn.current.context._errors.length === 0) {
-      dispatch(login(username, password))
-        .then(() => {
-          props.history.push("/profile");
-          window.location.reload();
-        })
-        .catch(() => {
-          setLoading(false);
-        });
-    } else {
-      setLoading(false);
-    }
+    dispatch(login(username, password))
+      .then((msg) => {
+        //서버에서 로그인 결과 메세지 받아옴
+        switch (msg) {
+          case "errId": //아이디 오류
+            setIsid(false);
+            break;
+          case "errPw": //비밀번호 오류
+            setIspw(false);
+            break;
+          case "correct":
+            props.history.push("/");
+            window.location.reload();
+            break;
+        }
+      })
+      .catch(() => {
+        setLoading(false);
+      });
   };
   if (isLoggedIn) {
-    return <Redirect to="/profile" />;
+    return <Redirect to="/" />;
   }
 
   return (
-    <div>
-      <Header />
-      <div className="body">
-        <div className="padding-top-lg position-center text-lg">
-          <strong>로그인</strong>
-        </div>
-        <div className="share-body left-space-lg right-space-lg ">
-          <Form onSubmit={onLoginHandler} className="login-box" ref={form}>
-            <Grid container>
-              <Grid item lg={4}></Grid>
-              <Grid item lg={4}>
-                <Input
-                  id="margin-none"
-                  type="username"
-                  className="size-full postion-center"
-                  placeholder="ID를 입력해주세요"
-                  variant="outlined"
-                  value={username}
-                  onChange={onUsernameHandler}
-                  validations={[required]}
-                  autoFocus
-                />
-                <br />
-                <br />
-                <Input
-                  id="margin-none"
-                  type="password"
-                  className="size-full postion-center"
-                  placeholder="PassWord를 입력해주세요"
-                  variant="outlined"
-                  value={password}
-                  onChange={onPasswordHandler}
-                  validations={[required]}
-                />
-                <br />
-                <br />
-                <ButtonGroup
-                  variant="text"
-                  color="primary"
-                  aria-label="text primary button group"
-                >
-                  <Button>아이디 찾기</Button>
-                  <Button>비밀번호 찾기</Button>
-                </ButtonGroup>
-                <br />
-                <br />
-                <div className="form-group">
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    className="position-center size-full"
-                    type="submit"
-                    disabled={loading}
-                  >
-                    {loading && (
-                      <span className="spinner-border spinner-border-sm"></span>
-                    )}
-                    <span>로그인</span>
-                  </Button>
-                </div>
-                <br />
-                {message && (
-                  <div className="form-group">
-                    <div className="position-center size-full" role="alert">
-                      {message}
-                    </div>
-                  </div>
-                )}
-                <CheckButton style={{ display: "none" }} ref={checkBtn} />
-              </Grid>
-              <Grid item lg={4}></Grid>
-            </Grid>
-          </Form>
-        </div>
+    <div className="body">
+      <div className="padding-top-lg position-center text-lg">
+        <strong>로그인</strong>
       </div>
+      <div className="share-body left-space-lg right-space-lg ">
+        <form onSubmit={onLoginHandler} className="login-box">
+          <Grid container>
+            <Grid item lg={4}></Grid>
+            <Grid item lg={4}>
+              <Input
+                error={isid ? false : true}
+                helperText={isid ? "" : "아이디가 올바르지 않습니다"}
+                type="username"
+                className="size-full postion-center"
+                placeholder="ID를 입력해주세요"
+                variant="outlined"
+                value={username}
+                onChange={onUsernameHandler}
+                autoFocus
+              />
+              <br />
+              <br />
+              <Input
+                error={isPw ? false : true}
+                helperText={isPw ? "" : "비밀번호가 올바르지 않습니다"}
+                type="password"
+                className="size-full postion-center"
+                placeholder="PassWord를 입력해주세요"
+                variant="outlined"
+                value={password}
+                onChange={onPasswordHandler}
+              />
+              <Grid container className="top-space-lg bottom-space-lg">
+                <Grid item lg={5} sm={0}></Grid>
+                <Grid
+                  item
+                  lg={3}
+                  sm={6}
+                  className="text-sm set-gray positon-center link-cursor-pointer position-center"
+                  onClick={findId}
+                >
+                  아이디 찾기
+                </Grid>
+                <Grid
+                  item
+                  lg={4}
+                  sm={6}
+                  className="text-sm set-gray positon-center link-cursor-pointer position-center"
+                  onClick={findPw}
+                >
+                  비밀번호 찾기
+                </Grid>
+              </Grid>
 
-      <Footer />
+              <Button
+                variant="contained"
+                color="primary"
+                className=" position-center size-full share-btn set-white"
+                type="submit"
+              >
+                로그인
+              </Button>
+            </Grid>
+            <Grid item lg={4}></Grid>
+          </Grid>
+        </form>
+      </div>
     </div>
   );
 };

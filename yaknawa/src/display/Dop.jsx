@@ -1,17 +1,14 @@
 import React, { useState, useRef } from "react";
-import Header from '../component/Header/Header';
-import Footer from '../component/Footer/Footer';
 import setTitle from '../services/set-title';
 import '../style/css/style.css';
 
-const Dop = (props)=>{
+const Dop = (props) => {
     setTitle("개인정보처리방침");
-    return(
-        <div>
-            <Header/>
-            <Footer/>
+    return (
+        <div className="body">
+
         </div>
-     
+
     );
 }
 

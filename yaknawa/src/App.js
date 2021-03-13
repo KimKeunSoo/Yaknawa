@@ -22,6 +22,7 @@ import Apply from "./display/Apply";
 import MPay from "./display/Medical_pay";
 import Admin from "./display/Admin";
 import Profile from "./display/TestProfile";
+
 function App() {
   return (
     <Router>
