@@ -24,8 +24,6 @@ import Apply from "./display/Apply";
 import MPay from "./display/Medical_pay";
 import Admin from "./display/Admin";
 import Profile from "./display/TestProfile";
-import Header from './component/Header/Header';
-import Footer from './component/Footer/Footer';
 import NotFound from './display/notFound';
 const App = (props) => {
   return (
