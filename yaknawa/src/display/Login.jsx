@@ -12,17 +12,26 @@ const Login = (props) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
-
+    const [isid, setIsid] = useState(true);
+    const [isPw, setIspw] = useState(true);
     const { isLoggedIn } = useSelector((state) => state.auth);
     const { message } = useSelector((state) => state.message);
 
+    const findId = () => {
+        alert("아이디찾기");
+    }
+    const findPw = () => {
+        alert("비밀번호 찾기");
+    }
     const dispatch = useDispatch();
 
     const onUsernameHandler = (e) => {
         setUsername(e.currentTarget.value);
+        setIsid(true);
     };
     const onPasswordHandler = (e) => {
         setPassword(e.currentTarget.value);
+        setIspw(true);
     };
 
     const onLoginHandler = (e) => {
@@ -31,9 +40,20 @@ const Login = (props) => {
         setLoading(true);
 
         dispatch(login(username, password))
-            .then(() => {
-                props.history.push("/");
-                window.location.reload();
+            .then((msg) => {//서버에서 로그인 결과 메세지 받아옴
+                switch (msg) {
+                    case "errId": //아이디 오류
+                        setIsid(false);
+                        break;
+                    case "errPw": //비밀번호 오류
+                        setIspw(false);
+                        break;
+                    case "correct":
+                        props.history.push("/");
+                        window.location.reload();
+                        break;
+                }
+
             })
             .catch(() => {
                 setLoading(false);
@@ -42,6 +62,9 @@ const Login = (props) => {
     if (isLoggedIn) {
         return <Redirect to="/" />;
     }
+
+
+
 
     return (
         <div className="body">
@@ -54,7 +77,8 @@ const Login = (props) => {
                         <Grid item lg={4}></Grid>
                         <Grid item lg={4}>
                             <Input
-
+                                error={isid ? false : true}
+                                helperText={isid ? "" : "아이디가 올바르지 않습니다"}
                                 type="username"
                                 className="size-full postion-center"
                                 placeholder="ID를 입력해주세요"
@@ -66,7 +90,8 @@ const Login = (props) => {
                             <br />
                             <br />
                             <Input
-
+                                error={isPw ? false : true}
+                                helperText={isPw ? "" : "비밀번호가 올바르지 않습니다"}
                                 type="password"
                                 className="size-full postion-center"
                                 placeholder="PassWord를 입력해주세요"
@@ -74,23 +99,21 @@ const Login = (props) => {
                                 value={password}
                                 onChange={onPasswordHandler}
                             />
-                            <br />
-                            <br />
-                            <ButtonGroup
-                                variant="text"
-                                color="primary"
-                                aria-label="text primary button group"
-                            >
-                                <Button>아이디 찾기</Button>
-                                <Button>비밀번호 찾기</Button>
-                            </ButtonGroup>
-                            <br />
-                            <br />
+                            <Grid container className="top-space-lg bottom-space-lg">
+                                <Grid item lg={5} sm={0}></Grid>
+                                <Grid item lg={3} sm={6} className="text-sm set-gray positon-center link-cursor-pointer position-center" onClick={findId}>
+                                    아이디 찾기
+                                </Grid>
+                                <Grid item lg={4} sm={6} className="text-sm set-gray positon-center link-cursor-pointer position-center" onClick={findPw}>
+                                    비밀번호 찾기
+                                </Grid>
+                            </Grid>
+
 
                             <Button
                                 variant="contained"
                                 color="primary"
-                                className=" position-center size-full"
+                                className=" position-center size-full share-btn set-white"
                                 type="submit"
                             >
                                 로그인

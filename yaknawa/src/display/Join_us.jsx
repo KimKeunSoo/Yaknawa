@@ -96,9 +96,9 @@ const JoinUs = (props) => {
         e.preventDefault();
         alert("아이디 중복검사");
     }
-    const checkNickname = (e) => {
+    const checkEmail = (e) => {
         e.preventDefault();
-        alert("닉네임 중복검사");
+        alert("이메일 인증버튼");
     }
 
     const submit = (e) => {
@@ -215,9 +215,7 @@ const JoinUs = (props) => {
                                 </div>
                                 <div className="form-control">
                                     <label className="size-big size-quarter position-left form-label">닉네임<sup>*</sup></label>
-                                    <Button variant="contained" color="default" className="position-right" onClick={checkNickname}>
-                                        중복확인
-                                        </Button>
+
                                     <TextField
                                         error={isnickname ? false : true}
                                         helperText={isnickname ? "" : "닉네임이 입력되지 않았습니다."}
@@ -231,6 +229,9 @@ const JoinUs = (props) => {
                                 </div>
                                 <div className="form-control">
                                     <label className="size-big size-quarter position-left form-label">이메일<sup>*</sup></label>
+                                    <Button variant="contained" color="default" className="position-right" onClick={checkEmail}>
+                                        인증
+                                        </Button>
                                     <TextField
                                         error={isemail ? false : true}
                                         helperText={isemail ? "" : "이메일이 입력되지 않았습니다."}
