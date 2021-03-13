@@ -23,45 +23,52 @@ import MPay from "./display/Medical_pay";
 import Admin from "./display/Admin";
 import Profile from "./display/TestProfile";
 
-function App() {
+import NotFound from './display/notFound';
+const App = (props) => {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/htu" component={Htu} />
-          <Route exact path="/dop" component={Dop} />
-          <Route exact path="/tos" component={Tos} />
-          <Route exact path="/priceform" component={Priceform} />
-          <Route exact path="/share" component={Share} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/joinus" component={JoinUs} />
-          <Route exact path="/modify" component={Modify} />
-          <Route exact path="/noticeall" component={Noticeall} />
-          <Route path="/noticeboard/:theme" component={Noticeboard} />
-          <Route exact path="/noticeboard" component={Noticeboard} />
-          <Route exact path="/askbc" component={Askbc} />
-          <Route exact path="/noticewrite/:theme" component={Noticewrite} />
-          <Route exact path="/noticewrite" component={Noticewrite} />
-          <Route exact path="/noticeread/:theme/:num" component={Noticeread} />
-          <Route exact path="/noticeread" component={Noticeread} />
-          <Route exact path="/searchall" component={ResultAll} />
-          <Route
-            exact
-            path="/searchpharmacy/:name"
-            component={ResultPharmacy}
-          />
-          <Route exact path="/searchpharmacy" component={ResultPharmacy} />
-          <Route exact path="/searchpill/:name" component={ResultPill} />
-          <Route exact path="/searchpill" component={ResultPill} />
-          <Route exact path="/pharmacy/:name/:address" component={Pharmacy} />
-          <Route exact path="/pharmacy" component={Pharmacy} />
-          <Route exact path="/apply" component={Apply} />
-          <Route exact path="/mpay" component={MPay} />
-          <Route exact path="/admin" component={Admin} />
-          <Route exact path="/profile" component={Profile} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" render={() => <Header condition={true} />} />
+        <Route exact path="/priceform" render={() => <Header condition={true} />} />
+        <Route render={() => <Header condition={false} />} />
+      </Switch>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/htu" component={Htu} />
+        <Route exact path="/dop" component={Dop} />
+        <Route exact path="/tos" component={Tos} />
+        <Route exact path="/priceform" component={Priceform} />
+        <Route exact path="/share" component={Share} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/joinus" component={JoinUs} />
+        <Route exact path="/modify" component={Modify} />
+        <Route exact path="/noticeall" component={Noticeall} />
+        <Route path="/noticeboard/:theme" component={Noticeboard} />
+        <Route exact path="/noticeboard" component={Noticeboard} />
+        <Route exact path="/askbc" component={Askbc} />
+        <Route exact path="/noticewrite/:theme" component={Noticewrite} />
+        <Route exact path="/noticewrite" component={Noticewrite} />
+        <Route exact path="/noticeread/:theme/:num" component={Noticeread} />
+        <Route exact path="/noticeread" component={Noticeread} />
+        <Route exact path="/searchall" component={ResultAll} />
+        <Route
+          exact
+          path="/searchpharmacy/:name"
+          component={ResultPharmacy}
+        />
+        <Route exact path="/searchpharmacy" component={ResultPharmacy} />
+        <Route exact path="/searchpill/:name" component={ResultPill} />
+        <Route exact path="/searchpill" component={ResultPill} />
+        <Route exact path="/pharmacy/:name/:address" component={Pharmacy} />
+        <Route exact path="/pharmacy" component={Pharmacy} />
+        <Route exact path="/apply" component={Apply} />
+        <Route exact path="/mpay" component={MPay} />
+        <Route exact path="/admin" component={Admin} />
+        <Route exact path="/profile" component={Profile} />
+        <Route component={NotFound} />
+      </Switch>
+      <Footer />
+
     </Router>
   );
 }
