@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Header from './component/Header/Header';
-import Footer from './component/Footer/Footer';
 import Home from "./display/Home";
 import Htu from "./display/Htu";
 import Dop from "./display/Dop";
@@ -24,6 +22,7 @@ import Apply from "./display/Apply";
 import MPay from "./display/Medical_pay";
 import Admin from "./display/Admin";
 import Profile from "./display/TestProfile";
+
 import NotFound from './display/notFound';
 const App = (props) => {
   return (
@@ -69,8 +68,8 @@ const App = (props) => {
         <Route component={NotFound} />
       </Switch>
       <Footer />
-    </Router>
 
+    </Router>
   );
 }
 
